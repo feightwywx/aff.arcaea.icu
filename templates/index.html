@@ -1,0 +1,35 @@
+{% extends pjax('base.html') %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}" />
+
+<div class="mdui-card" style="margin: 16px 16px 16px 16px;">
+    <div class="mdui-typo" style="margin: 24px 24px 24px 24px;">
+        <div class="mdui-typo-display-3 mdui-text-color-pink-accent" style="text-align: center;">
+            <strong>ＡＦＦ</strong></div>
+        <div class="mdui-typo-display-3 mdui-text-color-pink-accent" style="text-align: center;">
+            <strong>+ 工具箱 +</strong></div>
+        <p>
+            工具箱现在可以提供的功能：
+        </p>
+        <ul>
+            <li>切蛇工具</li>
+        </ul>
+        <p>
+            要查看所有工具，请点击左上角的“<i class="mdui-icon material-icons inline-icon inline-icon">menu</i>”；
+            要返回本页，则点击上方的标题。
+        </p>
+        <p>
+            源代码（GitHub）：
+        </p>
+        <ul>
+            <li>本站：<a href="https://github.com/feightwywx/aff.arcaea.icu">feightwywx/aff.arcaea.icu</a>
+            </li>
+            <li>API：<a href="https://github.com/feightwywx/arcfapi">feightwywx/arcfapi</a></li>
+        </ul>
+        <p>欢迎issue/pr</p>
+        <p>如果你不想提issue也可以直接锤邮箱：<a href="mailto://canis@direcore.xyz">canis@direcore.xyz</a></p>
+    </div>
+</div>
+{% endblock %}

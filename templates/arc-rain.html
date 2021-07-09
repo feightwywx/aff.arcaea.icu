@@ -1,0 +1,58 @@
+{% extends pjax('base.html') %}
+
+
+{% block content %}
+<div class="mdui-card" style="margin: 16px 16px 16px 16px;">
+    <div class="mdui-typo" style="margin: 24px 24px 24px 24px;">
+        <h4 class="mdui-text-color-pink-accent">下雨黑线生成器</h4>
+        <div class=" mdui-container">
+            <div class="mdui-row-xs-2 mdui-row-md-4">
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label" id="text-start">下雨起始时间</label>
+                        <input class="mdui-textfield-input" type="text" pattern="(\d+)" required/>
+                        <div class="mdui-textfield-error">请填写非负整数</div>
+                    </div>
+                </div>
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label" id="text-stop">下雨结束时间</label>
+                        <input class="mdui-textfield-input" type="text" pattern="(\d+)" required/>
+                        <div class="mdui-textfield-error">请填写非负整数</div>
+                    </div>
+                </div>
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label" id="text-step">雨点间隔</label>
+                        <input class="mdui-textfield-input" type="text" pattern="([1-9]\d*)" required/>
+                        <div class="mdui-textfield-error">请填写正整数</div>
+                    </div>
+                </div>
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label" id="text-length">雨点长度</label>
+                        <input class="mdui-textfield-input" type="text" pattern="([1-9]\d*)" required/>
+                        <div class="mdui-textfield-error">请填写正整数</div>
+                    </div>
+                </div>
+                <div class="mdui-row">
+                    <div class="mdui-col-xs-12 mdui-col-sm-4 mdui-col-offset-sm-8">
+                        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block"
+                            id="btn-generate" disabled>生成并复制</button>
+                    </div>
+                </div>
+                <div class="mdui-row">
+                    <div class="mdui-textfield">
+                        <textarea class="mdui-textfield-input" rows="10" placeholder="生成结果" id="text-result"></textarea>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<script src="{{ url_for('static',filename='js/textfield.js')}}"></script>
+{% endblock %}

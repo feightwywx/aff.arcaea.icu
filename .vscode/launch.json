@@ -8,7 +8,7 @@
             "name": "Launch Edge",
             "request": "launch",
             "type": "pwa-msedge",
-            "url": "http://localhost:80",
+            "url": "http://localhost:5000",
             "webRoot": "${workspaceFolder}"
         },
         {
@@ -16,7 +16,7 @@
             "version": "stable",
             "request": "launch",
             "name": "针对 localhost 启动 Edge",
-            "url": "http://localhost:80",
+            "url": "http://localhost:5000",
             "webRoot": "${workspaceFolder}"
         }
     ]
