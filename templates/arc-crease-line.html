@@ -9,8 +9,8 @@
             <div class="mdui-row">
                 <div class="mdui-col-xs-12">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label" id="text-arcstring">基准Arc字符串</label>
-                        <input class="mdui-textfield-input" type="text" pattern="arc\((\d+),(\d+),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([a-z]{1,4}),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([0-2]),([a-z]+),([a-z]+)\).*;" required/>
+                        <label class="mdui-textfield-label">基准Arc字符串</label>
+                        <input class="mdui-textfield-input" id="text-arcstring" type="text" pattern="arc\((\d+),(\d+),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([a-z]{1,4}),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([0-2]),([a-z]+),([a-z]+)\).*;" required/>
                         <div class="mdui-textfield-error">Arc格式错误</div>
                         <div class="mdui-textfield-helper">仅支持单个Arc</div>
                     </div>
@@ -19,24 +19,24 @@
             <div class="mdui-row-xs-1 mdui-row-md-3">
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label" id="text-x">x轴变动范围</label>
-                        <input class="mdui-textfield-input" type="text" pattern="(-*\d+[.\d+]*)" required/>
+                        <label class="mdui-textfield-label">x轴变动范围</label>
+                        <input class="mdui-textfield-input" id="text-x" type="text" pattern="(-*\d+[.\d+]*)" required/>
                         <div class="mdui-textfield-error">请填写数值</div>
                         <div class="mdui-textfield-helper">如果不变动，请填写0</div>
                     </div>
                 </div>
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label" id="text-y">y轴变动范围</label>
-                        <input class="mdui-textfield-input" type="text" pattern="(-*\d+[.\d+]*)" required/>
+                        <label class="mdui-textfield-label">y轴变动范围</label>
+                        <input class="mdui-textfield-input" id="text-y" type="text" pattern="(-*\d+[.\d+]*)" required/>
                         <div class="mdui-textfield-error">请填写数值</div>
                         <div class="mdui-textfield-helper">如果不变动，请填写0</div>
                     </div>
                 </div>
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label" id="text-count">折线数</label>
-                        <input class="mdui-textfield-input" type="text" pattern="([1-9]\d*)" required/>
+                        <label class="mdui-textfield-label">折线数</label>
+                        <input class="mdui-textfield-input" id="text-count" type="text" pattern="([1-9]\d*)" required/>
                         <div class="mdui-textfield-error">请填写正整数</div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                                 <div class="mdui-row">
                                     <div class="mdui-col-xs-6">
                                         <div class="mdui-textfield">
-                                            <label class="mdui-textfield-label">Arc终点</label>
+                                            <label class="mdui-textfield-label">Arc类型</label>
                                             <input class="mdui-textfield-input" id="text-easing" pattern="(s|b|si|so|siso|sosi|sisi|soso)" placeholder="s/b/si/so/siso/sosi/sisi/soso"/>
                                             <div class="mdui-textfield-error">请填写合法的蛇形</div>
                                             <div class="mdui-textfield-helper">可留空，默认为s形</div>
@@ -75,8 +75,8 @@
                                     </div>
                                     <div class="mdui-col-xs-4 mdui-col-lg-5">
                                         <select class="mdui-select" id='sel-mode' style="margin-top: 46px;">
-                                            <option value="1" selected>中线模式</option>
-                                            <option value="2">边线模式</option>
+                                            <option value="m" selected>中线模式</option>
+                                            <option value="b">边线模式</option>
                                         </select>
                                     </div>
                                 </div>

@@ -2,23 +2,20 @@ var $ = mdui.$;
 
 document.getElementById('btn-generate').addEventListener('click', function () {
     let ajaxdata = {
-        arcstring: document.getElementById('text-arcstring').value,
-        count: document.getElementById('text-count').value
+        start: document.getElementById('text-start').value,
+        stop: document.getElementById('text-stop').value,
+        step: document.getElementById('text-step').value,
     };
-    let start = document.getElementById('text-start').value;
-    let stop = document.getElementById('text-stop').value;
-    if (start !== '') {
-        ajaxdata.start = start;
-    }
-    if (stop !== '') {
-        ajaxdata.stop = stop;
+    let length = document.getElementById('text-length').value;
+    if (length !== '') {
+        ajaxdata.length = length;
     }
 
     console.log(ajaxdata);
 
     $.ajax({
         method: 'GET',
-        url: 'http://api.arcaea.icu/aff/arc/split',
+        url: 'http://api.arcaea.icu/aff/arc/rain',
         data: ajaxdata,
         datatype: 'json',
         success: function (data) {

@@ -2,23 +2,22 @@ var $ = mdui.$;
 
 document.getElementById('btn-generate').addEventListener('click', function () {
     let ajaxdata = {
-        arcstring: document.getElementById('text-arcstring').value,
-        count: document.getElementById('text-count').value
+        start: document.getElementById('text-start').value,
+        stop: document.getElementById('text-stop').value,
+        start_bpm: document.getElementById('text-start-bpm').value,
+        stop_bpm: document.getElementById('text-stop-bpm').value,
+        count: document.getElementById('text-count').value,
     };
-    let start = document.getElementById('text-start').value;
-    let stop = document.getElementById('text-stop').value;
-    if (start !== '') {
-        ajaxdata.start = start;
-    }
-    if (stop !== '') {
-        ajaxdata.stop = stop;
+    let bar = document.getElementById('text-bar').value;
+    if(bar !== '') {
+        ajaxdata.bar = bar;
     }
 
     console.log(ajaxdata);
 
     $.ajax({
         method: 'GET',
-        url: 'http://api.arcaea.icu/aff/arc/split',
+        url: 'http://api.arcaea.icu/aff/timing/easing',
         data: ajaxdata,
         datatype: 'json',
         success: function (data) {
@@ -43,4 +42,5 @@ document.getElementById('btn-generate').addEventListener('click', function () {
         },
         timeout: 5000
     });
+
 });

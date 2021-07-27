@@ -2,23 +2,24 @@ var $ = mdui.$;
 
 document.getElementById('btn-generate').addEventListener('click', function () {
     let ajaxdata = {
-        arcstring: document.getElementById('text-arcstring').value,
-        count: document.getElementById('text-count').value
+        start: document.getElementById('text-start').value,
+        stop: document.getElementById('text-stop').value,
+        count: document.getElementById('text-count').value,
+        bpm_range: document.getElementById('text-bpm-range').value
     };
-    let start = document.getElementById('text-start').value;
-    let stop = document.getElementById('text-stop').value;
-    if (start !== '') {
-        ajaxdata.start = start;
+    let exact_bar = document.getElementById('text-ex-bar').value;
+    let zero_bar = document.getElementById('text-zero-bar').value;
+    if (exact_bar !== '') {
+        ajaxdata.exact_bar = exact_bar;
     }
-    if (stop !== '') {
-        ajaxdata.stop = stop;
+    if (zero_bar !== '') {
+        ajaxdata.zero_bar = zero_bar;
     }
-
     console.log(ajaxdata);
 
     $.ajax({
         method: 'GET',
-        url: 'http://api.arcaea.icu/aff/arc/split',
+        url: 'http://api.arcaea.icu/aff/timing/glitch',
         data: ajaxdata,
         datatype: 'json',
         success: function (data) {

@@ -9,43 +9,43 @@
             <div class="mdui-row-xs-2 mdui-row-md-4">
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label" id="text-start">起始时间</label>
-                        <input class="mdui-textfield-input" type="text" pattern="(\d+)" required/>
+                        <label class="mdui-textfield-label">起始时间</label>
+                        <input class="mdui-textfield-input" id="text-start" type="text" pattern="(\d+)" required/>
                         <div class="mdui-textfield-error">请填写非负整数</div>
                     </div>
                 </div>
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label" id="text-stop">结束时间</label>
-                        <input class="mdui-textfield-input" type="text" pattern="(\d+)" required/>
+                        <label class="mdui-textfield-label">结束时间</label>
+                        <input class="mdui-textfield-input" id="text-stop" type="text" pattern="(\d+)" required/>
                         <div class="mdui-textfield-error">请填写非负整数</div>
                     </div>
                 </div>
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label" id="text-start-bpm">起始bpm</label>
-                        <input class="mdui-textfield-input" type="text" pattern="(-*\d+[.\d+]*)" required/>
+                        <label class="mdui-textfield-label">起始bpm</label>
+                        <input class="mdui-textfield-input" id="text-start-bpm" type="text" pattern="(-*\d+[.\d+]*)" required/>
                         <div class="mdui-textfield-error">请填写数值</div>
                     </div>
                 </div>
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label" id="text-stop-bpm">结束bpm</label>
-                        <input class="mdui-textfield-input" type="text" pattern="(-*\d+[.\d+]*)" required/>
+                        <label class="mdui-textfield-label">结束bpm</label>
+                        <input class="mdui-textfield-input" id="text-stop-bpm" type="text" pattern="(-*\d+[.\d+]*)" required/>
                         <div class="mdui-textfield-error">请填写数值</div>
                     </div>
                 </div>
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label" id="text-step">细分数量</label>
-                        <input class="mdui-textfield-input" type="text" pattern="([1-9]\d*)" required/>
+                        <label class="mdui-textfield-label">细分数量</label>
+                        <input class="mdui-textfield-input" id="text-count" type="text" pattern="([1-9]\d*)" required/>
                         <div class="mdui-textfield-error">请填写正整数</div>
                     </div>
                 </div>
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label" id="text-bar">小节线</label>
-                        <input class="mdui-textfield-input"  type="text" pattern="(\d+[.\d+]*)"/>
+                        <label class="mdui-textfield-label">小节线</label>
+                        <input class="mdui-textfield-input" id="text-bar" type="text" pattern="(\d+[.\d+]*)"/>
                         <div class="mdui-textfield-error">请填写非负数</div>
                         <div class="mdui-textfield-helper">非必填，默认4.00</div>
 
@@ -71,4 +71,5 @@
 
 {% block footer %}
 <script src="{{ url_for('static',filename='js/textfield.js')}}"></script>
+<script src="{{ url_for('static',filename='js/timing-easing.js')}}"></script>
 {% endblock %}
