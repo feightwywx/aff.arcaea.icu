@@ -7,7 +7,6 @@ function check_invalid () {
     Array.prototype.slice.call(fieldlist).forEach(element => {
         let textfield_input = element.getElementsByClassName('mdui-textfield-input')[0];
         let input_value = textfield_input.value;
-        console.log(input_value);
         if (
             element.classList.contains('mdui-textfield-invalid-html5') ||
             (
@@ -32,12 +31,5 @@ window.onload = function () {
         element.addEventListener('input', function () {
             check_invalid();
         });
-    });
-
-    document.getElementById('btn-paste').addEventListener('click', function () {
-        text_arcstr = document.getElementById('text-arcstring');
-        text_arcstr.value = "123";
-        text_arcstr.select();
-        document.execCommand("copy");
     });
 };

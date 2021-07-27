@@ -10,17 +10,17 @@
                 <div class="mdui-col-xs-12">
                     <div class="mdui-textfield mdui-textfield-floating-label">
                         <label class="mdui-textfield-label">Arc字符串</label>
-                        <input class="mdui-textfield-input" id="text-arcstring" type="text" pattern="arc\((\d+),(\d+),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([a-z]{1,4}),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([0-2]),([a-z]+),([a-z]+)\).*;" required/>
-                        <div class="mdui-textfield-error">Arc格式错误</div>
-                        <div class="mdui-textfield-helper">仅支持单个Arc</div>
+                        <input class="mdui-textfield-input" id="text-arcstring" type="text" pattern="arc\((\d+),(\d+),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([a-z]{1,4}),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([0-2]),(none|full|incremental),(true|false)\);" required/>
+                        <div class="mdui-textfield-error">Arc格式错误，请填写单个不带arctap的Arc语句</div>
+                        <div class="mdui-textfield-helper">仅支持单个不带arctap的Arc</div>
                     </div>
                 </div>
             </div>
             <div class="mdui-row">
                 <div class="mdui-col-xs-6">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label" id="text-count">细分数量</label>
-                        <input class="mdui-textfield-input" type="text" pattern="([1-9]\d*)" required/>
+                        <label class="mdui-textfield-label">细分数量</label>
+                        <input class="mdui-textfield-input" id="text-count" type="text" pattern="([1-9]\d*)" required/>
                         <div class="mdui-textfield-error">请填写正整数</div>
                     </div>
                 </div>
@@ -52,14 +52,16 @@
                                 <div class="mdui-col-xs-6">
                                     <div class="mdui-textfield">
                                         <label class="mdui-textfield-label">Arc起始点</label>
-                                        <input class="mdui-textfield-input" id="text-start" />
+                                        <input class="mdui-textfield-input" id="text-start" pattern="(\d+)"/>
+                                        <div class="mdui-textfield-error">请填写非负整数</div>
                                         <div class="mdui-textfield-helper">可留空</div>
                                     </div>
                                 </div>
                                 <div class="mdui-col-xs-6">
                                     <div class="mdui-textfield">
                                         <label class="mdui-textfield-label">Arc终点</label>
-                                        <input class="mdui-textfield-input" id="text-stop" />
+                                        <input class="mdui-textfield-input" id="text-stop" pattern="(\d+)"/>
+                                        <div class="mdui-textfield-error">请填写非负整数</div>
                                         <div class="mdui-textfield-helper">可留空</div>
                                     </div>
                                 </div>
@@ -70,7 +72,7 @@
             </div>
             <div class="mdui-row">
                 <div class="mdui-textfield">
-                    <textarea class="mdui-textfield-input" rows="10" placeholder="生成结果" id="text-result"></textarea>
+                    <textarea class="mdui-textfield-input" rows="10" placeholder="生成结果" id="text-result" disabled></textarea>
                 </div>
             </div>
     </div>
@@ -81,5 +83,6 @@
 
 {% block footer %}
 <script src="{{ url_for('static',filename='js/arc-cutter.js')}}"></script>
+<script src="{{ url_for('static',filename='js/more-settings.js')}}"></script>
 <script src="{{ url_for('static',filename='js/textfield.js')}}"></script>
 {% endblock %}

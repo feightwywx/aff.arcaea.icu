@@ -41,20 +41,47 @@
                     </div>
                 </div>
                 <div class="mdui-row">
-                    <div class="mdui-col-xs-2 mdui-col-lg-1">
-                        <p style="margin-top: 5px;">基准</p>
-                    </div>
-                    <div class="mdui-col-xs-10 mdui-col-lg-11">
-                        <select class="mdui-select" id='sel-mode'>
-                            <option value="1" selected>中线模式</option>
-                            <option value="2">边线模式</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="mdui-row">
                     <div class="mdui-col-xs-12 mdui-col-sm-4 mdui-col-offset-sm-8">
                         <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block"
                             id="btn-generate" disabled>生成并复制</button>
+                    </div>
+                </div>
+                <div class="mdui-row">
+                    <div class="mdui-col-xs-2 mdui-col-sm-1">
+                        <label class="mdui-switch">
+                            <input type="checkbox" id='more-settings-toggle' />
+                            <i class="mdui-switch-icon"></i>
+                        </label>
+                    </div>
+                    <div class="mdui-col-xs-10 mdui-col-sm-11" style="margin-top: 6px;">
+                        <p>更多设置</p>
+                    </div>
+                </div>
+                <div class="mdui-collapse">
+                    <div class="mdui-collapse-item" id="more-settings-item">
+                        <div class="mdui-collapse-item-body">
+                            <div class="mdui-container-fluid">
+                                <div class="mdui-row">
+                                    <div class="mdui-col-xs-6">
+                                        <div class="mdui-textfield">
+                                            <label class="mdui-textfield-label">Arc终点</label>
+                                            <input class="mdui-textfield-input" id="text-easing" pattern="(s|b|si|so|siso|sosi|sisi|soso)" placeholder="s/b/si/so/siso/sosi/sisi/soso"/>
+                                            <div class="mdui-textfield-error">请填写合法的蛇形</div>
+                                            <div class="mdui-textfield-helper">可留空，默认为s形</div>
+                                        </div>
+                                    </div>
+                                    <div class="mdui-col-xs-2 mdui-col-lg-1">
+                                        <p style="margin-top: 52px;">基准</p>
+                                    </div>
+                                    <div class="mdui-col-xs-4 mdui-col-lg-5">
+                                        <select class="mdui-select" id='sel-mode' style="margin-top: 46px;">
+                                            <option value="1" selected>中线模式</option>
+                                            <option value="2">边线模式</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="mdui-row">
@@ -71,4 +98,6 @@
 
 {% block footer %}
 <script src="{{ url_for('static',filename='js/textfield.js')}}"></script>
+<script src="{{ url_for('static',filename='js/arc-crease-line.js')}}"></script>
+<script src="{{ url_for('static',filename='js/more-settings.js')}}"></script>
 {% endblock %}
