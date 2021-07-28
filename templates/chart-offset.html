@@ -1,0 +1,50 @@
+{% extends pjax('base.html') %}
+
+
+{% block content %}
+<div class="mdui-card" style="margin: 16px 16px 16px 16px;">
+    <div class="mdui-typo" style="margin: 24px 24px 24px 24px;">
+        <h4 class="mdui-text-color-pink-accent">谱面偏移工具</h4>
+        <p>偏移整个谱面可能耗时较长，请坐和放宽（</p>
+        <div class=" mdui-container">
+            <div class="mdui-row">
+                <div class="mdui-textfield">
+                    <textarea class="mdui-textfield-input" rows="10" placeholder="完整.aff或谱面片段" id="text-aff" maxlength="1500000" required></textarea>
+                    <div class="mdui-textfield-error">请填写谱面语句</div>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-col-xs-6 mdui-col-sm-4">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">偏移量（ms）</label>
+                        <input class="mdui-textfield-input" id="text-offset" type="text" pattern="(-*\d+[.\d+]*)" required/>
+                        <div class="mdui-textfield-error">请填写数值</div>
+                    </div>
+                </div>
+                <div class="mdui-col-xs-1 mdui-col-offset-xs-5 mdui-col-offset-sm-7">
+                    <div id="div-spinner" style="margin-top: 50px;">
+                        <!-- Placeholder for spinner -->
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-col-xs-12 mdui-col-sm-4 mdui-col-offset-sm-8">
+                    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block"
+                        id="btn-generate" disabled>生成并复制</button>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-textfield">
+                    <textarea class="mdui-textfield-input" rows="10" placeholder="生成结果" id="text-result" disabled></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<script src="{{ url_for('static',filename='js/textfield.js')}}"></script>
+<script src="{{ url_for('static',filename='js/chart-offset.js')}}"></script>
+{% endblock %}

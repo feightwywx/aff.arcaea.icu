@@ -20,6 +20,10 @@ def create_app():
     def root():
         return render_template('index.html')
 
+    @app.route('/chart-offset')
+    def chart_offset():
+        return render_template('chart-offset.html')
+
     @app.route('/arc-cutter')
     def arc_cutter():
         return render_template('arc-cutter.html')

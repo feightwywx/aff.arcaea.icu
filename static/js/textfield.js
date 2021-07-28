@@ -1,3 +1,4 @@
+var $ = mdui.$;
 var checklist = [];
 
 function check_invalid () {
@@ -32,4 +33,6 @@ window.onload = function () {
             check_invalid();
         });
     });
+
+    $('#page-progress').hide();
 };

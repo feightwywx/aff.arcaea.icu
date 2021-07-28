@@ -14,11 +14,13 @@
             工具箱现在可以提供的功能：
         </p>
         <ul>
-            <li>切蛇工具</li>
+            <li>谱面整体、片段偏移</li>
+            <li>切蛇工具、下雨黑线生成、折线蛇生成</li>
+            <li>Timing线性缓动、Timing抽搐</li>
         </ul>
         <p>
             要查看所有工具，请点击左上角的“<i class="mdui-icon material-icons inline-icon inline-icon">menu</i>”；
-            要返回本页，则点击上方的标题。
+            要返回本页，则点击上方的标题。还请合理地使用。
         </p>
         <p>
             真的很烂的源代码（GitHub）：
@@ -28,8 +30,13 @@
             </li>
             <li>API：<a href="https://github.com/feightwywx/arcfapi">feightwywx/arcfapi</a></li>
         </ul>
-        <p>欢迎issue/pr</p>
-        <p>如果你不想提issue也可以直接锤邮箱：<a href="mailto://canis@direcore.xyz">canis@direcore.xyz</a></p>
+        <p>欢迎issue/pr，如果你不想提issue也可以直接锤邮箱：<a href="mailto://canis@direcore.xyz">canis@direcore.xyz</a></p>
+        <s>我不知道输入那些参数之后生成出来的是啥，也不知道aff是个什么东西怎么用，更不知道和某创新立体节奏游戏有什么关系，不要来问我</s>
     </div>
 </div>
+{% endblock %}
+
+{% block footer %}
+<script src="{{ url_for('static',filename='js/textfield.js')}}"></script>
+<script src="{{ url_for('static',filename='js/index.js')}}"></script>
 {% endblock %}
