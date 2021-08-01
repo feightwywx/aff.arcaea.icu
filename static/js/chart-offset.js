@@ -18,7 +18,7 @@ document.getElementById('btn-generate').addEventListener('click', function () {
 
     $.ajax({
         method: 'POST',
-        url: 'http://api.arcaea.icu/aff/chart/offset',
+        url: 'https://api.arcaea.icu/aff/chart/offset',
         data: ajaxdata,
         datatype: 'json',
         success: function (data) {

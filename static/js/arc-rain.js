@@ -15,7 +15,7 @@ document.getElementById('btn-generate').addEventListener('click', function () {
 
     $.ajax({
         method: 'GET',
-        url: 'http://api.arcaea.icu/aff/arc/rain',
+        url: 'https://api.arcaea.icu/aff/arc/rain',
         data: ajaxdata,
         datatype: 'json',
         success: function (data) {

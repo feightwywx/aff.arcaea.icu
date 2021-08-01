@@ -18,7 +18,7 @@ document.getElementById('btn-generate').addEventListener('click', function () {
 
     $.ajax({
         method: 'GET',
-        url: 'http://api.arcaea.icu/aff/arc/split',
+        url: 'https://api.arcaea.icu/aff/arc/split',
         data: ajaxdata,
         datatype: 'json',
         success: function (data) {

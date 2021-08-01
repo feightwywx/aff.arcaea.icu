@@ -19,7 +19,7 @@ document.getElementById('btn-generate').addEventListener('click', function () {
 
     $.ajax({
         method: 'GET',
-        url: 'http://api.arcaea.icu/aff/timing/glitch',
+        url: 'https://api.arcaea.icu/aff/timing/glitch',
         data: ajaxdata,
         datatype: 'json',
         success: function (data) {

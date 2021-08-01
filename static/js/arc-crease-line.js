@@ -17,7 +17,7 @@ document.getElementById('btn-generate').addEventListener('click', function () {
 
     $.ajax({
         method: 'GET',
-        url: 'http://api.arcaea.icu/aff/arc/crease-line',
+        url: 'https://api.arcaea.icu/aff/arc/crease-line',
         data: ajaxdata,
         datatype: 'json',
         success: function (data) {
