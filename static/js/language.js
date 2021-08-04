@@ -72,7 +72,7 @@ var execI18n = function () {
         return false;
     };
     var sourceName = optionEle.attr('content');
-    sourceName = sourceName.split('-');
+    sourceName = sourceName.split(',');
 
     if (getCookie("userLanguage")) {
         i18nLanguage = getCookie("userLanguage");
@@ -93,6 +93,11 @@ var execI18n = function () {
         }
     }
 
+    if (jQuery.i18n == undefined) {
+        console.log("请引入i18n js 文件")
+        return false;
+    };
+
     /*
     这里需要进行i18n的翻译
      */
@@ -106,11 +111,19 @@ var execI18n = function () {
             console.log(".i18n 写入中...");
             insertEle.each(function() {
                 // 根据i18n元素的 name 获取内容写入
-                $(this).html($.i18n.prop($(this).attr('name')));
+                console.log(this);
+                console.log(jQuery.i18n.prop($(this).attr('name')));
+                $(this).html(jQuery.i18n.prop($(this).attr('name')));
             });
             console.log("写入完毕");
 
             console.log(".i18n-input 写入中...");
+            var insertEle = $(".i18n-input");
+            insertEle.each(function() {
+                // 根据i18n元素的 name 获取内容写入
+                $(this).attr('placeholder', jQuery.i18n.prop($(this).attr('name')));
+            });
+            /*
             var insertInputEle = $(".i18n-input");
             insertInputEle.each(function() {
                 var selectAttr = $(this).attr('selectattr');
@@ -119,8 +132,10 @@ var execI18n = function () {
                 };
                 $(this).attr(selectAttr, $.i18n.prop($(this).attr('selectname')));
             });
+            */
             console.log("写入完毕");
-        }
+        },
+        async: true
     });
 };
 
@@ -135,13 +150,17 @@ $(function () {
     $("#language option[value=" + i18nLanguage + "]").attr("selected", true);
 
     /* 选择语言 */
-    $("#language").on('change', function () {
-        var language = $(this).children('option:selected').val()
-        console.log(language);
-        getCookie("userLanguage", language, {
-            expires: 30,
-            path: '/'
+    Array.prototype.slice.call($(".lang-switch-btn")).forEach(element => {
+        console.log(element);
+        $(element).on('click', function () {
+            var language = $(element).attr('value');
+            console.log(language);
+            getCookie("userLanguage", language, {
+                expires: 30,
+                path: '/'
+            });
+            location.reload();
         });
-        location.reload();
     });
+
 });

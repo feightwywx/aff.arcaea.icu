@@ -1,28 +1,31 @@
 {% extends pjax('base.html') %}
 
+{% block head %}
+<meta id="i18n_pagename" content="kit-ui,common">
+{% endblock %}
 
 {% block content %}
 <div class="mdui-card" style="margin: 16px 16px 16px 16px;">
     <div class="mdui-typo" style="margin: 24px 24px 24px 24px;">
-        <h4 class="mdui-text-color-pink-accent">切蛇工具</h4>
+        <h4 class="mdui-text-color-pink-accent i18n" name="arc-cutter-headword">切蛇工具</h4>
         <div class=" mdui-container">
             <div class="mdui-row">
                 <div class="mdui-col-xs-12">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label">Arc字符串</label>
+                        <label class="mdui-textfield-label i18n" name="arcstring">Arc字符串</label>
                         <input class="mdui-textfield-input" id="text-arcstring" type="text"
                             pattern="arc\((\d+),(\d+),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([a-z]{1,4}),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([0-2]),(none|full|incremental),(true|false)\);" required />
-                        <div class="mdui-textfield-error">Arc格式错误，请填写单个不带arctap的Arc语句</div>
-                        <div class="mdui-textfield-helper">支持单个不带arctap的Arc</div>
+                        <div class="mdui-textfield-error i18n" name="err-wrong-arc-fmt">Arc格式错误，请填写单个不带arctap的Arc语句</div>
+                        <div class="mdui-textfield-helper i18n" name="info-single-arc">仅支持单个不带arctap的Arc</div>
                     </div>
                 </div>
             </div>
             <div class="mdui-row">
                 <div class="mdui-col-xs-6">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label">细分数量</label>
+                        <label class="mdui-textfield-label i18n" name="count">细分数量</label>
                         <input class="mdui-textfield-input" id="text-count" type="text" pattern="([1-9]\d*)" required />
-                        <div class="mdui-textfield-error">请填写正整数</div>
+                        <div class="mdui-textfield-error i18n" name="err-posint-req">请填写正整数</div>
                     </div>
                 </div>
             </div>
@@ -30,8 +33,8 @@
                 <div class="mdui-col-sm-6"></div>
                 <div class="mdui-col-xs-6 mdui-col-sm-3"></div>
                 <div class="mdui-col-xs-6 mdui-col-sm-3">
-                    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block"
-                        id="btn-generate" disabled>生成并复制</button>
+                    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block i18n"
+                        id="btn-generate" name="gen" disabled>生成并复制</button>
                 </div>
             </div>
             <div class="mdui-row">
@@ -42,7 +45,7 @@
                     </label>
                 </div>
                 <div class="mdui-col-xs-10 mdui-col-sm-11" style="margin-top: 6px;">
-                    <p>更多设置</p>
+                    <p class="i18n" name="more">更多设置</p>
                 </div>
             </div>
             <div class="mdui-collapse">
@@ -52,18 +55,18 @@
                             <div class="mdui-row">
                                 <div class="mdui-col-xs-6">
                                     <div class="mdui-textfield">
-                                        <label class="mdui-textfield-label">Arc起始点</label>
+                                        <label class="mdui-textfield-label i18n" name="arc-start">Arc起始点</label>
                                         <input class="mdui-textfield-input" id="text-start" pattern="(\d+)" />
-                                        <div class="mdui-textfield-error">请填写非负整数</div>
-                                        <div class="mdui-textfield-helper">可留空</div>
+                                        <div class="mdui-textfield-error i18n" name="err-natint-req">请填写非负整数</div>
+                                        <div class="mdui-textfield-helper i18n" name="info-sel">可留空</div>
                                     </div>
                                 </div>
                                 <div class="mdui-col-xs-6">
                                     <div class="mdui-textfield">
-                                        <label class="mdui-textfield-label">Arc终点</label>
+                                        <label class="mdui-textfield-label i18n" name="arc-stop">Arc终点</label>
                                         <input class="mdui-textfield-input" id="text-stop" pattern="(\d+)" />
-                                        <div class="mdui-textfield-error">请填写非负整数</div>
-                                        <div class="mdui-textfield-helper">可留空</div>
+                                        <div class="mdui-textfield-error i18n" name="err-natint-req">请填写非负整数</div>
+                                        <div class="mdui-textfield-helper i18n" name="info-sel">可留空</div>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +76,7 @@
             </div>
             <div class="mdui-row">
                 <div class="mdui-textfield">
-                    <textarea class="mdui-textfield-input" rows="10" placeholder="生成结果" id="text-result"
+                    <textarea class="mdui-textfield-input i18n-input" name="result" rows="10" placeholder="生成结果" id="text-result"
                         disabled></textarea>
                 </div>
             </div>

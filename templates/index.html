@@ -1,7 +1,7 @@
 {% extends pjax('base.html') %}
 
 {% block head %}
-<meta id="i18n_pagename" content="index-common">
+<meta id="i18n_pagename" content="index,common">
 {% endblock %}
 
 {% block content %}
@@ -10,37 +10,36 @@
 <div class="mdui-card" style="margin: 16px 16px 16px 16px;">
     <div class="mdui-typo" style="margin: 24px 24px 24px 24px;">
         <div class="mdui-typo-display-3 mdui-text-color-pink-accent" style="text-align: center;">
-            <strong>ＡＦＦ</strong></div>
+            <strong class="i18n" name="highlight-1">ＡＦＦ</strong></div>
         <div class="mdui-typo-display-3 mdui-text-color-pink-accent" style="text-align: center;">
-            <strong>+ 工具箱 +</strong></div>
-        <p>
+            <strong class="i18n" name="highlight-2">+ 工具箱 +</strong></div>
+        <p class="i18n" name="p-1">
             工具箱现在可以提供的功能：
         </p>
         <ul>
-            <li>谱面整体、片段偏移</li>
-            <li>切蛇工具、下雨黑线生成、折线蛇生成</li>
-            <li>Timing线性缓动、Timing抽搐</li>
+            <li class="i18n" name="li-1-1">谱面整体、片段偏移</li>
+            <li class="i18n" name="li-1-2">切蛇工具、下雨黑线生成、折线蛇生成</li>
+            <li class="i18n" name="li-1-3">Timing线性缓动、Timing抽搐</li>
         </ul>
-        <p>
-            要查看所有工具，请点击左上角的“<i class="mdui-icon material-icons inline-icon inline-icon">menu</i>”；
+        <p class="i18n" name="p-2">
+            要查看所有工具，请点击左上角的“<i class="mdui-icon material-icons inline-icon">menu</i>”；
             要返回本页，则点击上方的标题。还请合理地使用。
         </p>
-        <p>
+        <p class="i18n" name="p-3">
             真的很烂的源代码（GitHub）：
         </p>
         <ul>
-            <li>本站：<a href="https://github.com/feightwywx/aff.arcaea.icu">feightwywx/aff.arcaea.icu</a>
+            <li class="i18n" name="li-2-1">本站：<a href="https://github.com/feightwywx/aff.arcaea.icu">feightwywx/aff.arcaea.icu</a>
             </li>
-            <li>API：<a href="https://github.com/feightwywx/arcfapi">feightwywx/arcfapi</a></li>
+            <li class="i18n" name="li-2-2">API：<a href="https://github.com/feightwywx/arcfapi">feightwywx/arcfapi</a></li>
         </ul>
-        <p>欢迎issue/pr，如果你不想提issue也可以直接锤邮箱：<a href="mailto://canis@direcore.xyz">canis@direcore.xyz</a></p>
-        <s>我不知道输入那些参数之后生成出来的是啥，也不知道aff是个什么东西怎么用，更不知道和某创新立体节奏游戏有什么关系，不要来问我</s>
+        <p class="i18n" name="p-4">欢迎issue/pr，如果你不想提issue也可以直接锤邮箱：<a href="mailto://canis@direcore.xyz">canis@direcore.xyz</a></p>
+        <s class="i18n" name="s-1">我不知道输入那些参数之后生成出来的是啥，也不知道aff是个什么东西怎么用，更不知道和某创新立体节奏游戏有什么关系，不要来问我</s>
     </div>
 </div>
 {% endblock %}
 
 {% block footer %}
-<script src="{{ url_for('static',filename='js/language.js')}}"></script>
 <script src="{{ url_for('static',filename='js/textfield.js')}}"></script>
 <script src="{{ url_for('static',filename='js/index.js')}}"></script>
 {% endblock %}
