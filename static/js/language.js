@@ -1,5 +1,5 @@
 var $ = jQuery;
-$(document).pjax('a',{timeout: 3000}, '#pjax-container');
+$(document).pjax('a', '#pjax-container');
 
 /**
  * cookie操作
