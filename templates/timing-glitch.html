@@ -7,62 +7,62 @@
 {% block content %}
 <div class="mdui-card" style="margin: 16px 16px 16px 16px;">
     <div class="mdui-typo" style="margin: 24px 24px 24px 24px;">
-        <h4 class="mdui-text-color-pink-accent i18n" name="timing-glitch">抽搐Timing生成器</h4>
+        <h4 class="mdui-text-color-pink-accent i18n" name="timing-glitch"></h4>
         <div class=" mdui-container">
-            <div class="mdui-row-xs-2 mdui-row-md-4">
+            <div class="mdui-row-xs-1 mdui-row-md-2">
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label i18n" name="time-start">起始时间</label>
+                        <label class="mdui-textfield-label i18n" name="time-start"></label>
                         <input class="mdui-textfield-input" id="text-start" type="text" pattern="(\d+)" required/>
-                        <div class="mdui-textfield-error i18n" name="err-natint-req">请填写非负整数</div>
+                        <div class="mdui-textfield-error i18n" name="err-natint-req"></div>
                     </div>
                 </div>
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label i18n" name="time-stop">结束时间</label>
+                        <label class="mdui-textfield-label i18n" name="time-stop"></label>
                         <input class="mdui-textfield-input" id="text-stop" type="text" pattern="(\d+)" required/>
-                        <div class="mdui-textfield-error i18n" name="err-natint-req">请填写非负整数</div>
+                        <div class="mdui-textfield-error i18n" name="err-natint-req"></div>
                     </div>
                 </div>
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label i18n" name="count">细分数量</label>
+                        <label class="mdui-textfield-label i18n" name="count"></label>
                         <input class="mdui-textfield-input" id="text-count" pattern="([1-9]\d*)" required/>
-                        <div class="mdui-textfield-error i18n" name="err-posint-req">请填写正整数</div>
+                        <div class="mdui-textfield-error i18n" name="err-posint-req"></div>
                     </div>
                 </div>
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label i18n" name="bpm-range">bpm变化幅度</label>
+                        <label class="mdui-textfield-label i18n" name="bpm-range"></label>
                         <input class="mdui-textfield-input" id="text-bpm-range" type="text" pattern="(-*\d+[.\d+]*)" required/>
-                        <div class="mdui-textfield-error i18n" name="err-num-req">请填写数值</div>
+                        <div class="mdui-textfield-error i18n" name="err-num-req"></div>
                     </div>
                 </div>            
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label i18n" name="bar-ex">变流速小节线</label>
+                        <label class="mdui-textfield-label i18n" name="bar-ex"></label>
                         <input class="mdui-textfield-input" id="text-ex-bar" type="text" pattern="(\d+[.\d+]*)"/>
-                        <div class="mdui-textfield-error i18n" name="err-nonnegnum-req">请填写非负数</div>
-                        <div class="mdui-textfield-helper i18n" name="info-sel-def-4">非必填，默认4.00</div>
+                        <div class="mdui-textfield-error i18n" name="err-nonnegnum-req"></div>
+                        <div class="mdui-textfield-helper i18n" name="info-sel-def-4"></div>
                     </div>
                 </div>
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label i18n" name="bar-zero">零流速小节线</label>
+                        <label class="mdui-textfield-label i18n" name="bar-zero"></label>
                         <input class="mdui-textfield-input" id="text-zero-bar" type="text" pattern="(\d+[.\d+]*)"/>
-                        <div class="mdui-textfield-error i18n" name="err-nonnegnum-req">请填写非负数</div>
-                        <div class="mdui-textfield-helper i18n" name="info-sel-def-4">非必填，默认4.00</div>
+                        <div class="mdui-textfield-error i18n" name="err-nonnegnum-req"></div>
+                        <div class="mdui-textfield-helper i18n" name="info-sel-def-4"></div>
                     </div>
                 </div>
                 <div class="mdui-row">
-                    <div class="mdui-col-xs-12 mdui-col-sm-4 mdui-col-offset-sm-8">
+                    <div class="mdui-col-xs-12 mdui-col-sm-6 mdui-col-offset-sm-6">
                         <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block i18n"
-                            id="btn-generate" name="gen" disabled>生成并复制</button>
+                            id="btn-generate" name="gen" disabled></button>
                     </div>
                 </div>
                 <div class="mdui-row">
                     <div class="mdui-textfield">
-                        <textarea class="mdui-textfield-input i18n-input" name="result" rows="10" placeholder="生成结果" id="text-result" disabled></textarea>
+                        <textarea class="mdui-textfield-input i18n-input" name="result" rows="10" placeholder="" id="text-result" disabled></textarea>
                     </div>
                 </div>
             </div>

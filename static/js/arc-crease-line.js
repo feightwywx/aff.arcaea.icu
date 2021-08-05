@@ -13,7 +13,7 @@ document.getElementById('btn-generate').addEventListener('click', function () {
         ajaxdata.easing = easing;
     }
 
-    console.log(ajaxdata);
+    // console.log(ajaxdata);
 
     $.ajax({
         method: 'GET',

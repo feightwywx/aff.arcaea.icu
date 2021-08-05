@@ -11,7 +11,7 @@ document.getElementById('btn-generate').addEventListener('click', function () {
         ajaxdata.length = length;
     }
 
-    console.log(ajaxdata);
+    // console.log(ajaxdata);
 
     $.ajax({
         method: 'GET',

@@ -15,7 +15,7 @@ document.getElementById('btn-generate').addEventListener('click', function () {
     if (zero_bar !== '') {
         ajaxdata.zero_bar = zero_bar;
     }
-    console.log(ajaxdata);
+    // console.log(ajaxdata);
 
     $.ajax({
         method: 'GET',

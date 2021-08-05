@@ -8,7 +8,7 @@ document.getElementById('btn-generate').addEventListener('click', function () {
         offset: document.getElementById('text-offset').value
     };
 
-    console.log(ajaxdata);
+    // console.log(ajaxdata);
 
     let spinner = document.createElement('div');
     spinner.classList.add('mdui-spinner');

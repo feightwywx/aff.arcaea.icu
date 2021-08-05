@@ -7,46 +7,46 @@
 {% block content %}
 <div class="mdui-card" style="margin: 16px 16px 16px 16px;">
     <div class="mdui-typo" style="margin: 24px 24px 24px 24px;">
-        <h4 class="mdui-text-color-pink-accent i18n" name="arc-crease-headword">折线蛇生成器</h4>
+        <h4 class="mdui-text-color-pink-accent i18n" name="arc-crease-headword"></h4>
         <div class=" mdui-container">
             <div class="mdui-row">
                 <div class="mdui-col-xs-12">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label i18n" name="base-arcstring">基准Arc字符串</label>
+                        <label class="mdui-textfield-label i18n" name="base-arcstring"></label>
                         <input class="mdui-textfield-input" id="text-arcstring" type="text" pattern="arc\((\d+),(\d+),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([a-z]{1,4}),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([0-2]),([a-z]+),([a-z]+)\).*;" required/>
-                        <div class="mdui-textfield-error i18n" name="err-wrong-arc-fmt">Arc格式错误</div>
-                        <div class="mdui-textfield-helper i18n" name="info-single-arc">仅支持单个Arc</div>
+                        <div class="mdui-textfield-error i18n" name="err-wrong-arc-fmt"></div>
+                        <div class="mdui-textfield-helper i18n" name="info-single-arc"></div>
                     </div>
                 </div>
             </div>
-            <div class="mdui-row-xs-1 mdui-row-md-3">
+            <div class="mdui-row-xs-1 mdui-row-md-2">
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label i18n" name="x-range">x轴变动范围</label>
+                        <label class="mdui-textfield-label i18n" name="x-range"></label>
                         <input class="mdui-textfield-input" id="text-x" type="text" pattern="(-*\d+[.\d+]*)" required/>
-                        <div class="mdui-textfield-error i18n" name="err-num-req">请填写数值</div>
-                        <div class="mdui-textfield-helper i18n" name="info-std-zero">如果不变动，请填写0</div>
+                        <div class="mdui-textfield-error i18n" name="err-num-req"></div>
+                        <div class="mdui-textfield-helper i18n" name="info-std-zero"></div>
                     </div>
                 </div>
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label i18n" name="y-range">y轴变动范围</label>
+                        <label class="mdui-textfield-label i18n" name="y-range"></label>
                         <input class="mdui-textfield-input" id="text-y" type="text" pattern="(-*\d+[.\d+]*)" required/>
-                        <div class="mdui-textfield-error i18n" name="err-num-req">请填写数值</div>
-                        <div class="mdui-textfield-helper i18n" name="info-std-zero">如果不变动，请填写0</div>
+                        <div class="mdui-textfield-error i18n" name="err-num-req"></div>
+                        <div class="mdui-textfield-helper i18n" name="info-std-zero"></div>
                     </div>
                 </div>
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
-                        <label class="mdui-textfield-label i18n" name="crease-count">折线数</label>
+                        <label class="mdui-textfield-label i18n" name="crease-count"></label>
                         <input class="mdui-textfield-input" id="text-count" type="text" pattern="([1-9]\d*)" required/>
-                        <div class="mdui-textfield-error i18n" name="err-posint-req">请填写正整数</div>
+                        <div class="mdui-textfield-error i18n" name="err-posint-req"></div>
                     </div>
                 </div>
                 <div class="mdui-row">
-                    <div class="mdui-col-xs-12 mdui-col-sm-4 mdui-col-offset-sm-8">
+                    <div class="mdui-col-xs-12 mdui-col-sm-6 mdui-col-offset-sm-6">
                         <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block i18n"
-                            id="btn-generate" name="gen" disabled>生成并复制</button>
+                            id="btn-generate" name="gen" disabled></button>
                     </div>
                 </div>
                 <div class="mdui-row">
@@ -56,8 +56,8 @@
                             <i class="mdui-switch-icon"></i>
                         </label>
                     </div>
-                    <div class="mdui-col-xs-10 mdui-col-sm-11" style="margin-top: 6px;">
-                        <p>更多设置</p>
+                    <div class="mdui-col-xs-10 mdui-col-sm-11 i18n" name="more" style="margin-top: 6px;">
+                        <p></p>
                     </div>
                 </div>
                 <div class="mdui-collapse">
@@ -65,21 +65,21 @@
                         <div class="mdui-collapse-item-body">
                             <div class="mdui-container-fluid">
                                 <div class="mdui-row">
-                                    <div class="mdui-col-xs-6">
+                                    <div class="mdui-xs-12 mdui-col-md-6">
                                         <div class="mdui-textfield">
                                             <label class="mdui-textfield-label i18n" name="arc-type">Arc类型</label>
                                             <input class="mdui-textfield-input" id="text-easing" pattern="(s|b|si|so|siso|sosi|sisi|soso)" placeholder="s/b/si/so/siso/sosi/sisi/soso"/>
-                                            <div class="mdui-textfield-error i18n" name="err-wrong-arc-type">请填写合法的蛇形</div>
-                                            <div class="mdui-textfield-helper i18n" name="info-sel-def-s">可留空，默认为s形</div>
+                                            <div class="mdui-textfield-error i18n" name="err-wrong-arc-type"></div>
+                                            <div class="mdui-textfield-helper i18n" name="info-sel-def-s"></div>
                                         </div>
                                     </div>
-                                    <div class="mdui-col-xs-2 mdui-col-lg-1">
-                                        <p style="margin-top: 52px;" class="i18n" name='base-sel'>基准</p>
+                                    <div class="mdui-col-xs-3 mdui-col-md-2">
+                                        <p style="margin-top: 52px;" class="i18n" name='base-sel'></p>
                                     </div>
-                                    <div class="mdui-col-xs-4 mdui-col-lg-5">
+                                    <div class="mdui-col-xs-6 mdui-col-md-4">
                                         <select class="mdui-select" id='sel-mode' style="margin-top: 46px;">
-                                            <option value="m" selected class="i18n" name="opt-mid">中线模式</option>
-                                            <option value="b" class="i18n" name="opt-mid">边线模式</option>
+                                            <option value="m" selected class="i18n" name="opt-mid"></option>
+                                            <option value="b" class="i18n" name="opt-bor"></option>
                                         </select>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="mdui-row">
                     <div class="mdui-textfield">
-                        <textarea class="mdui-textfield-input i18n-input" name="result" rows="10" placeholder="生成结果" id="text-result" disabled></textarea>
+                        <textarea class="mdui-textfield-input i18n-input" name="result" rows="10" placeholder="" id="text-result" disabled></textarea>
                     </div>
                 </div>
             </div>

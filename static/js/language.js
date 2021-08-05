@@ -1,3 +1,6 @@
+var $ = jQuery;
+$(document).pjax('a',{timeout: 3000}, '#pjax-container');
+
 /**
  * cookie操作
  */
@@ -68,7 +71,7 @@
 var execI18n = function () {
     var optionEle = $("#i18n_pagename");
     if (optionEle.length < 1) {
-        console.log("未找到页面名称元素，请在页面写入\n <meta id=\"i18n_pagename\" content=\"页面名(对应语言包的语言文件名)\">");
+        // console.log("未找到页面名称元素，请在页面写入\n <meta id=\"i18n_pagename\" content=\"页面名(对应语言包的语言文件名)\">");
         return false;
     };
     var sourceName = optionEle.attr('content');
@@ -88,13 +91,13 @@ var execI18n = function () {
                 getCookie("userLanguage",navLanguage);
             };
         } else{
-            console.log("not navigator");
+            // console.log("not navigator");
             return false;
         }
     }
 
     if (jQuery.i18n == undefined) {
-        console.log("请引入i18n js 文件")
+        // console.log("请引入i18n js 文件")
         return false;
     };
 
@@ -108,16 +111,16 @@ var execI18n = function () {
         language : i18nLanguage,
         callback : function() {//加载成功后设置显示内容
             var insertEle = $(".i18n");
-            console.log(".i18n 写入中...");
+            // console.log(".i18n 写入中...");
             insertEle.each(function() {
                 // 根据i18n元素的 name 获取内容写入
-                console.log(this);
-                console.log(jQuery.i18n.prop($(this).attr('name')));
+                // console.log(this);
+                // console.log(jQuery.i18n.prop($(this).attr('name')));
                 $(this).html(jQuery.i18n.prop($(this).attr('name')));
             });
-            console.log("写入完毕");
+            // console.log("写入完毕");
 
-            console.log(".i18n-input 写入中...");
+            // console.log(".i18n-input 写入中...");
             var insertEle = $(".i18n-input");
             insertEle.each(function() {
                 // 根据i18n元素的 name 获取内容写入
@@ -133,7 +136,7 @@ var execI18n = function () {
                 $(this).attr(selectAttr, $.i18n.prop($(this).attr('selectname')));
             });
             */
-            console.log("写入完毕");
+            // console.log("写入完毕");
         },
         async: true
     });
@@ -141,7 +144,7 @@ var execI18n = function () {
 
 $(function () {
 
-    console.log('润；');
+    // console.log('润；');
 
     /*执行I18n翻译*/
     execI18n();
@@ -151,10 +154,10 @@ $(function () {
 
     /* 选择语言 */
     Array.prototype.slice.call($(".lang-switch-btn")).forEach(element => {
-        console.log(element);
+        // console.log(element);
         $(element).on('click', function () {
             var language = $(element).attr('value');
-            console.log(language);
+            // console.log(language);
             getCookie("userLanguage", language, {
                 expires: 30,
                 path: '/'
