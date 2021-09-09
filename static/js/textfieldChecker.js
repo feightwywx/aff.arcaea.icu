@@ -29,14 +29,5 @@ function check_invalid() {
 };
 
 window.onload = function () {
-    let inputlist = document.getElementsByClassName('mdui-textfield-input');
-    if (inputlist !== null) {
-        Array.prototype.slice.call(inputlist).forEach(element => {
-            element.addEventListener('input', function () {
-                check_invalid();
-            });
-        });
-    }
-
     mdui.$('#page-progress').hide();
 };
