@@ -26,7 +26,7 @@ def create_app():
     def chart_offset():
         return render_template('chart-offset.html')
 
-    @app.route('/arc-cutter')
+    @app.route('/arc-split')
     def arc_cutter():
         return render_template('arc-cutter.html')
     

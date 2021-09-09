@@ -1,4 +1,4 @@
-var $ = jQuery;
+let $ = jQuery;
 $(document).pjax('a', '#pjax-container');
 
 /**
@@ -166,4 +166,5 @@ $(function () {
         });
     });
 
+    mdui.$('#page-progress').hide();
 });

@@ -57,7 +57,7 @@
                 <div class="mdui-row">
                     <div class="mdui-col-xs-12 mdui-col-sm-6 mdui-col-offset-sm-6">
                         <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block i18n"
-                            id="btn-generate" name="gen" disabled></button>
+                            id="btn-generate" name="gen" onclick="genTimingEasing()" disabled></button>
                     </div>
                 </div>
                 <div class="mdui-row">
@@ -70,9 +70,4 @@
     </div>
 </div>
 </div>
-{% endblock %}
-
-{% block footer %}
-<script src="{{ url_for('static',filename='js/textfield.js')}}"></script>
-<script src="{{ url_for('static',filename='js/timing-easing.js')}}"></script>
 {% endblock %}

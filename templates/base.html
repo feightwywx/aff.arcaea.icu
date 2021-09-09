@@ -46,7 +46,7 @@
             <li class="mdui-subheader i18n" name="drawer-sub-chart"></li>
             <a class="mdui-list-item i18n" name="drawer-chart-offset" href="/chart-offset"></a>
             <li class="mdui-subheader i18n" name="drawer-sub-arc"></li>
-            <a class="mdui-list-item i18n" name="drawer-arc-cutter" href="/arc-cutter"></a>
+            <a class="mdui-list-item i18n" name="drawer-arc-cutter" href="/arc-split"></a>
             <a class="mdui-list-item i18n" name="drawer-arc-rain" href="/arc-rain"></a>
             <a class="mdui-list-item i18n" name="drawer-arc-crease" href="/arc-crease-line"></a>
             <li class="mdui-subheader i18n" name="drawer-sub-timing"></li>
@@ -84,9 +84,13 @@
         integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous">
     </script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery.i18n.properties.min.js')}}"></script>
-    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery.pjax.js')}}"></script>
-    <script type="text/javascript" src="{{ url_for('static',filename='js/language.js')}}"></script>
+    <script type="text/javascript" src="/static/js/lib/jquery.i18n.properties.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/jquery.pjax.js"></script>
+    <script type="text/javascript" src="/static/js/result.js"></script>
+    <script type="text/javascript" src="/static/js/event.js"></script>
+    <script type="text/javascript" src="/static/js/more-settings.js"></script>
+    <script type="text/javascript" src="/static/js/textfield.js"></script>
+    <script type="text/javascript" src="/static/js/language.js"></script>
     {% block footer %}{% endblock %}
 </body>
 

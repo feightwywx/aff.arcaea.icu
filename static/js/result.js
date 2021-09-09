@@ -1,25 +1,29 @@
-var $ = mdui.$;
+const apiBaseUrl = 'https://api.arcaea.icu/aff/';
 
+var getResult = function (ajaxData, timeout = 5000, method = 'GET') {
 
-document.getElementById('btn-generate').addEventListener('click', function () {
-    this.disabled = 'disabled';
-    let ajaxdata = {
-        aff: document.getElementById('text-aff').value,
-        offset: document.getElementById('text-offset').value
-    };
-
-    // console.log(ajaxdata);
-
-    let spinner = document.createElement('div');
-    spinner.classList.add('mdui-spinner');
     spinnerContainer = document.getElementById('div-spinner');
-    spinnerContainer.appendChild(spinner);
-    mdui.mutation();
+    if (spinnerContainer !== null) {
+        let spinner = document.createElement('div');
+        spinner.classList.add('mdui-spinner');
+        spinnerContainer.appendChild(spinner);
+        mdui.mutation();
+    }
 
-    $.ajax({
-        method: 'POST',
-        url: 'https://api.arcaea.icu/aff/chart/offset',
-        data: ajaxdata,
+    let moduleName = window.location.pathname.substring(1); // e.g. "/chart-offset".substring(1)
+    let moduleNameList = moduleName.split("-");  // e.g. ['chart', 'offset']
+    let apiUrl = apiBaseUrl;
+    if (moduleNameList[1] === 'crease') {
+        apiUrl += 'arc/crease-line';
+    }
+    else {
+        apiUrl = apiBaseUrl + moduleNameList[0] + '/' + moduleNameList[1];
+    }
+
+    mdui.$.ajax({
+        method: method,
+        url: apiUrl,
+        data: ajaxData,
         datatype: 'json',
         success: function (data) {
             let jsondata = JSON.parse(data)
@@ -41,10 +45,12 @@ document.getElementById('btn-generate').addEventListener('click', function () {
         error: function () {
             mdui.alert('遇到了未知错误');
         },
-        timeout: 100000,
+        timeout: timeout,
         complete: function () {
-            spinnerContainer.innerHTML = "";
+            if (spinnerContainer !== null) {
+                spinnerContainer.innerHTML = "";
+            }
             document.getElementById('btn-generate').removeAttribute('disabled');
         }
     });
-});
+}
