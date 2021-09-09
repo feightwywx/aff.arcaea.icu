@@ -7,10 +7,10 @@
 from os import abort
 from flask import Flask, render_template
 from flask_pjax import PJAX
-from dotenv import load
+from dotenv import load_dotenv
 import os
 
-load()
+load_dotenv()
 
 
 def create_app():
