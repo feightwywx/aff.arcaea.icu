@@ -16,7 +16,7 @@ load_dotenv()
 def create_app():
 
     app = Flask(__name__, instance_relative_config=True)
-    app.config["PJAX_BASE_TEMPLATE"] = "templates/pjax.html"
+    app.config["PJAX_BASE_TEMPLATE"] = "pjax.html"
 
     @app.route('/')
     def root():
@@ -26,7 +26,7 @@ def create_app():
     def chart_offset():
         return render_template('chart-offset.html')
 
-    @app.route('/arc-split')
+    @app.route('/arc-cutter')
     def arc_cutter():
         return render_template('arc-cutter.html')
     

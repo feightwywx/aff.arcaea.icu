@@ -1,10 +1,20 @@
-let $ = jQuery;
+var $ = jQuery;
 $(document).pjax('a', '#pjax-container');
+
+var kitUIArray = [
+    'chart-offset',
+    'arc-split',
+    'arc-cutter',
+    'arc-rain',
+    'arc-crease-line',
+    'timing-easing',
+    'timing-glitch'
+];
 
 /**
  * cookie操作
  */
- var getCookie = function(name, value, options) {
+var getCookie = function (name, value, options) {
     if (typeof value != 'undefined') { // name and value given, set cookie
         options = options || {};
         if (value === null) {
@@ -44,38 +54,50 @@ $(document).pjax('a', '#pjax-container');
         }
         return cookieValue;
     }
-  };
-  
-  /**
-  * 获取浏览器语言类型
-  * @return {string} 浏览器国家语言
-  */
-  var getNavLanguage = function(){
-    if(navigator.appName == "Netscape"){
+};
+
+/**
+* 获取浏览器语言类型
+* @return {string} 浏览器国家语言
+*/
+var getNavLanguage = function () {
+    if (navigator.appName == "Netscape") {
         var navLanguage = navigator.language;
-        return navLanguage.substr(0,2);
+        return navLanguage.substr(0, 2);
     }
     return false;
-  }
-  
-  /**
-  * 设置语言类型： 默认为中文
-  */
-  var i18nLanguage = "zh-CN";
-  
-  /*
-  设置一下网站支持的语言种类
-  */
-  var webLanguage = ['zh-CN', 'en'];
+}
+
+/**
+* 设置语言类型： 默认为中文
+*/
+var i18nLanguage = "zh-CN";
+
+/*
+设置一下网站支持的语言种类
+*/
+var webLanguage = ['zh-CN', 'en'];
 
 var execI18n = function () {
-    var optionEle = $("#i18n_pagename");
-    if (optionEle.length < 1) {
-        // console.log("未找到页面名称元素，请在页面写入\n <meta id=\"i18n_pagename\" content=\"页面名(对应语言包的语言文件名)\">");
-        return false;
-    };
-    var sourceName = optionEle.attr('content');
-    sourceName = sourceName.split(',');
+    // var optionEle = $("#i18n_pagename");
+    // if (optionEle.length < 1) {
+    //     // console.log("未找到页面名称元素，请在页面写入\n <meta id=\"i18n_pagename\" content=\"页面名(对应语言包的语言文件名)\">");
+    //     return false;
+    // };
+    // var sourceName = optionEle.attr('content');
+    // sourceName = sourceName.split(',');
+
+    var sourceName = [];
+    if (window.location.pathname == '/') {
+        sourceName.push('index')
+    } else {
+        var i18nModuleName = window.location.pathname.substring(1); // e.g. "/chart-offset".substring(1)
+        if ($.inArray(i18nModuleName, kitUIArray) != -1) {
+            sourceName.push('kit-ui');
+        }
+    }
+    sourceName.push('common');
+
 
     if (getCookie("userLanguage")) {
         i18nLanguage = getCookie("userLanguage");
@@ -88,9 +110,9 @@ var execI18n = function () {
             if (charSize > -1) {
                 i18nLanguage = navLanguage;
                 // 存到缓存中
-                getCookie("userLanguage",navLanguage);
+                getCookie("userLanguage", navLanguage);
             };
-        } else{
+        } else {
             // console.log("not navigator");
             return false;
         }
@@ -105,14 +127,14 @@ var execI18n = function () {
     这里需要进行i18n的翻译
      */
     jQuery.i18n.properties({
-        name : sourceName, //资源文件名称
-        path : 'lang/' + i18nLanguage +'/', //资源文件路径
-        mode : 'map', //用Map的方式使用资源文件中的值
-        language : i18nLanguage,
-        callback : function() {//加载成功后设置显示内容
-            var insertEle = $(".i18n");
+        name: sourceName, //资源文件名称
+        path: 'lang/' + i18nLanguage + '/', //资源文件路径
+        mode: 'map', //用Map的方式使用资源文件中的值
+        language: i18nLanguage,
+        callback: function () {//加载成功后设置显示内容
+            var i18nInsertEle = $(".i18n");
             // console.log(".i18n 写入中...");
-            insertEle.each(function() {
+            i18nInsertEle.each(function () {
                 // 根据i18n元素的 name 获取内容写入
                 // console.log(this);
                 // console.log(jQuery.i18n.prop($(this).attr('name')));
@@ -121,8 +143,8 @@ var execI18n = function () {
             // console.log("写入完毕");
 
             // console.log(".i18n-input 写入中...");
-            var insertEle = $(".i18n-input");
-            insertEle.each(function() {
+            var i18nInputinsertEle = $(".i18n-input");
+            i18nInputinsertEle.each(function () {
                 // 根据i18n元素的 name 获取内容写入
                 $(this).attr('placeholder', jQuery.i18n.prop($(this).attr('name')));
             });

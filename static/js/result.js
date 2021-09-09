@@ -1,6 +1,6 @@
 const apiBaseUrl = 'https://api.arcaea.icu/aff/';
 
-var getResult = function (ajaxData, timeout = 5000, method = 'GET') {
+var getResult = function (ajaxData, timeout = 5000, method = 'GET', customUrl = null) {
 
     spinnerContainer = document.getElementById('div-spinner');
     if (spinnerContainer !== null) {
@@ -13,8 +13,8 @@ var getResult = function (ajaxData, timeout = 5000, method = 'GET') {
     let moduleName = window.location.pathname.substring(1); // e.g. "/chart-offset".substring(1)
     let moduleNameList = moduleName.split("-");  // e.g. ['chart', 'offset']
     let apiUrl = apiBaseUrl;
-    if (moduleNameList[1] === 'crease') {
-        apiUrl += 'arc/crease-line';
+    if (customUrl !== null) {
+        apiUrl += customUrl;
     }
     else {
         apiUrl = apiBaseUrl + moduleNameList[0] + '/' + moduleNameList[1];

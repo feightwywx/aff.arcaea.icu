@@ -25,7 +25,7 @@ var genArcCutter = function () {
         ajaxdata.stop = stop;
     }
 
-    getResult(ajaxdata);
+    getResult(ajaxdata, 5000, 'GET', 'arc/split');
 }
 
 var genArcRain = function () {
@@ -59,7 +59,7 @@ var genArcCrease = function () {
         ajaxdata.easing = easing;
     }
 
-    getResult(ajaxdata);
+    getResult(ajaxdata, 5000, 'GET', 'arc/crease-line');
 }
 
 var genTimingEasing = function () {
