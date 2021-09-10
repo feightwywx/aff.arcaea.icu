@@ -1,0 +1,27 @@
+@keyframes card-enter {
+    from {
+        top: 150px;
+        opacity: 0%;
+    }
+    to {
+        top: 0px;
+        opacity: 100%;
+    }
+}
+
+@keyframes card-fade {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+
+.pjax-card-loaded {
+    animation: card-enter 0.3s 1 ease-out;
+}
+
+.pjax-card-fade {
+    animation: card-fade 0.3s 1 ease-out;
+}

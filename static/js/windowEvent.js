@@ -41,6 +41,11 @@ var windowLoad = function () {
     }
 
     mdui.mutation();
+
+    pjaxCard = $('.pjax-card')[0];
+    $(pjaxCard).addClass('pjax-card-loaded');
+    $(pjaxCard).css('display', 'block');
+
     mdui.$('#page-progress').hide();
 }
 
