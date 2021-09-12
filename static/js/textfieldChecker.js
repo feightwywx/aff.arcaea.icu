@@ -8,10 +8,10 @@ function check_invalid() {
         return;
     }
     Array.prototype.slice.call(fieldlist).forEach(element => {
-        let textfield_input = element;
-        let input_value = element.value;
+        let textfield_input = element.getElementsByClassName('mdui-textfield-input')[0];
+        let input_value = textfield_input.value;
         if (
-            element.classList.contains('mdui-textfield-invalid-html5') ||
+            $(element).hasClass('mdui-textfield-invalid-html5') ||
             (
                 (textfield_input.required) && input_value == ""
             )
@@ -26,9 +26,5 @@ function check_invalid() {
     } else {
         commit_btn.removeAttribute('disabled');
     }
-    console.log(checklist);
-};
-
-window.onload = function () {
-    mdui.$('#page-progress').hide();
+    // console.log(checklist);
 };

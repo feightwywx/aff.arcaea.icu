@@ -7,9 +7,9 @@
         <div class=" mdui-container">
             <div class="mdui-row">
                 <div class="mdui-col-xs-12">
-                    <div class="mdui-textfield mdui-textfield-floating-label">
+                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
                         <label class="mdui-textfield-label i18n" name="arcstring"></label>
-                        <input class="mdui-textfield-input mdui-textfield-input-card" id="text-arcstring" type="text"
+                        <input class="mdui-textfield-input " id="text-arcstring" type="text"
                             pattern="arc\((\d+),(\d+),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([a-z]{1,4}),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([0-2]),(none|full|incremental),(true|false)\);" required />
                         <div class="mdui-textfield-error i18n" name="err-wrong-arc-fmt"></div>
                         <div class="mdui-textfield-helper i18n" name="info-single-arc"></div>
@@ -18,9 +18,9 @@
             </div>
             <div class="mdui-row">
                 <div class="mdui-col-xs-6">
-                    <div class="mdui-textfield mdui-textfield-floating-label">
+                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
                         <label class="mdui-textfield-label i18n" name="count"></label>
-                        <input class="mdui-textfield-input mdui-textfield-input-card" id="text-count" type="text" pattern="([1-9]\d*)" required />
+                        <input class="mdui-textfield-input " id="text-count" type="text" pattern="([1-9]\d*)" required />
                         <div class="mdui-textfield-error i18n" name="err-posint-req"></div>
                     </div>
                 </div>
@@ -49,17 +49,17 @@
                         <div class="mdui-container-fluid">
                             <div class="mdui-row">
                                 <div class="mdui-col-xs-12 mdui-col-sm-6">
-                                    <div class="mdui-textfield">
+                                    <div class="mdui-textfield mdui-textfield-input-card">
                                         <label class="mdui-textfield-label i18n" name="arc-start"></label>
-                                        <input class="mdui-textfield-input mdui-textfield-input-card" id="text-start" pattern="(\d+)" />
+                                        <input class="mdui-textfield-input " id="text-start" pattern="(\d+)" />
                                         <div class="mdui-textfield-error i18n" name="err-natint-req"></div>
                                         <div class="mdui-textfield-helper i18n" name="info-sel"></div>
                                     </div>
                                 </div>
                                 <div class="mdui-col-xs-12 mdui-col-sm-6">
-                                    <div class="mdui-textfield">
+                                    <div class="mdui-textfield mdui-textfield-input-card">
                                         <label class="mdui-textfield-label i18n" name="arc-stop"></label>
-                                        <input class="mdui-textfield-input mdui-textfield-input-card" id="text-stop" pattern="(\d+)" />
+                                        <input class="mdui-textfield-input " id="text-stop" pattern="(\d+)" />
                                         <div class="mdui-textfield-error i18n" name="err-natint-req"></div>
                                         <div class="mdui-textfield-helper i18n" name="info-sel"></div>
                                     </div>
