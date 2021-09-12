@@ -9,7 +9,7 @@
                 <div class="mdui-col-xs-12">
                     <div class="mdui-textfield mdui-textfield-floating-label">
                         <label class="mdui-textfield-label i18n" name="base-arcstring"></label>
-                        <input class="mdui-textfield-input" id="text-arcstring" type="text" pattern="arc\((\d+),(\d+),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([a-z]{1,4}),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([0-2]),([a-z]+),([a-z]+)\).*;" required/>
+                        <input class="mdui-textfield-input mdui-textfield-input-card" id="text-arcstring" type="text" pattern="arc\((\d+),(\d+),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([a-z]{1,4}),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([0-2]),([a-z]+),([a-z]+)\).*;" required/>
                         <div class="mdui-textfield-error i18n" name="err-wrong-arc-fmt"></div>
                         <div class="mdui-textfield-helper i18n" name="info-single-arc"></div>
                     </div>
@@ -19,7 +19,7 @@
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
                         <label class="mdui-textfield-label i18n" name="x-range"></label>
-                        <input class="mdui-textfield-input" id="text-x" type="text" pattern="(-*\d+[.\d+]*)" required/>
+                        <input class="mdui-textfield-input mdui-textfield-input-card" id="text-x" type="text" pattern="(-*\d+[.\d+]*)" required/>
                         <div class="mdui-textfield-error i18n" name="err-num-req"></div>
                         <div class="mdui-textfield-helper i18n" name="info-std-zero"></div>
                     </div>
@@ -27,7 +27,7 @@
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
                         <label class="mdui-textfield-label i18n" name="y-range"></label>
-                        <input class="mdui-textfield-input" id="text-y" type="text" pattern="(-*\d+[.\d+]*)" required/>
+                        <input class="mdui-textfield-input mdui-textfield-input-card" id="text-y" type="text" pattern="(-*\d+[.\d+]*)" required/>
                         <div class="mdui-textfield-error i18n" name="err-num-req"></div>
                         <div class="mdui-textfield-helper i18n" name="info-std-zero"></div>
                     </div>
@@ -35,7 +35,7 @@
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label">
                         <label class="mdui-textfield-label i18n" name="crease-count"></label>
-                        <input class="mdui-textfield-input" id="text-count" type="text" pattern="([1-9]\d*)" required/>
+                        <input class="mdui-textfield-input mdui-textfield-input-card" id="text-count" type="text" pattern="([1-9]\d*)" required/>
                         <div class="mdui-textfield-error i18n" name="err-posint-req"></div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                                     <div class="mdui-xs-12 mdui-col-md-6">
                                         <div class="mdui-textfield">
                                             <label class="mdui-textfield-label i18n" name="arc-type">Arc类型</label>
-                                            <input class="mdui-textfield-input" id="text-easing" pattern="(s|b|si|so|siso|sosi|sisi|soso)" placeholder="s/b/si/so/siso/sosi/sisi/soso"/>
+                                            <input class="mdui-textfield-input mdui-textfield-input-card" id="text-easing" pattern="(s|b|si|so|siso|sosi|sisi|soso)" placeholder="s/b/si/so/siso/sosi/sisi/soso"/>
                                             <div class="mdui-textfield-error i18n" name="err-wrong-arc-type"></div>
                                             <div class="mdui-textfield-helper i18n" name="info-sel-def-s"></div>
                                         </div>

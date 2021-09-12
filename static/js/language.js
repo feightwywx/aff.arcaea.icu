@@ -147,6 +147,13 @@ var execI18n = function () {
                 // 根据i18n元素的 name 获取内容写入
                 $(this).attr('placeholder', jQuery.i18n.prop($(this).attr('name')));
             });
+
+            var i18nInputinsertEle = $(".i18n-tooltip");
+            i18nInputinsertEle.each(function () {
+                // 根据i18n元素的 name 获取内容写入
+                let tip = "{content: '" + jQuery.i18n.prop($(this).attr('name')) + "'}";
+                $(this).attr('mdui-tooltip', tip);
+            });
             /*
             var insertInputEle = $(".i18n-input");
             insertInputEle.each(function() {
@@ -158,6 +165,7 @@ var execI18n = function () {
             });
             */
             // console.log("写入完毕");
+            
         },
         async: true
     });

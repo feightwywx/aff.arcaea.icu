@@ -22,17 +22,183 @@
                     class="mdui-icon material-icons">menu</i></a>
             <a class="mdui-typo-title i18n" name="bar-title" href="/"></a>
             <div class="mdui-toolbar-spacer"></div>
-            <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '语言/Language', position: 'left'}" mdui-menu="{target: '#lang-menu'}"><i class="mdui-icon material-icons">translate</i></a>
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon"
+                mdui-tooltip="{content: '语言/Language', position: 'left'}" mdui-menu="{target: '#lang-menu'}"><i
+                    class="mdui-icon material-icons">translate</i></a>
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#tool-menu'}"><i
+                    class="mdui-icon material-icons">more_vert</i></a>
             <ul class="mdui-menu" id="lang-menu">
                 <li class="mdui-menu-item">
-                  <a href="javascript:;" class="mdui-ripple lang-switch-btn" value="zh-CN">简体中文</a>
+                    <a href="javascript:;" class="mdui-ripple lang-switch-btn" value="zh-CN">简体中文</a>
                 </li>
                 <li class="mdui-menu-item">
-                  <a href="javascript:;" class="mdui-ripple lang-switch-btn" value="en">English</a>
+                    <a href="javascript:;" class="mdui-ripple lang-switch-btn" value="en">English</a>
+                </li>
+            </ul>
+            <ul class="mdui-menu" id="tool-menu">
+                <li class="mdui-menu-item">
+                    <a href="javascript:;" class="mdui-ripple i18n" mdui-dialog="{target:'#arc-construct-tool'}"
+                        name="arc-construct-tool"></a>
+                </li>
+                <li class="mdui-menu-item">
+                    <a href="javascript:;" class="mdui-ripple i18n" mdui-dialog="{target:'#time-caculator'}"
+                        name="time-caculator"></a>
                 </li>
             </ul>
         </div>
     </header>
+    <div class="mdui-dialog" id="arc-construct-tool">
+        <div class="mdui-typo" style="margin: 24px 24px 24px 24px;">
+            <h4 class="mdui-text-color-pink-accent i18n" name="arc-construct-tool"></h4>
+        </div>
+        <div class="mdui-container" style="margin-bottom: 24px;">
+            <div class="mdui-row-xs-2 mdui-row-md-3">
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label i18n" name="ac-time-start"></label>
+                        <input class="mdui-textfield-input" id="ac-text-start-time" type="text" pattern="(\d+)"
+                            required />
+                        <div class="mdui-textfield-error i18n" name="err-natint-req"></div>
+                    </div>
+                </div>
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label i18n" name="ac-time-stop"></label>
+                        <input class="mdui-textfield-input" id="ac-text-stop-time" type="text" pattern="(\d+)"
+                            required />
+                        <div class="mdui-textfield-error i18n" name="err-natint-req"></div>
+                    </div>
+                </div>
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label i18n" name="ac-x-start"></label>
+                        <input class="mdui-textfield-input" id="ac-text-start-x" type="text" pattern="(-*\d+[.\d+]*)"
+                            required />
+                        <div class="mdui-textfield-error i18n" name="err-num-req"></div>
+                    </div>
+                </div>
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label i18n" name="ac-x-stop"></label>
+                        <input class="mdui-textfield-input" id="ac-text-stop-x" type="text" pattern="(-*\d+[.\d+]*)"
+                            required />
+                        <div class="mdui-textfield-error i18n" name="err-num-req"></div>
+                    </div>
+                </div>
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label i18n" name="ac-y-start"></label>
+                        <input class="mdui-textfield-input" id="ac-text-start-y" type="text" pattern="(-*\d+[.\d+]*)"
+                            required />
+                        <div class="mdui-textfield-error i18n" name="err-num-req"></div>
+                    </div>
+                </div>
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label i18n" name="ac-y-stop"></label>
+                        <input class="mdui-textfield-input" id="ac-text-stop-y" type="text" pattern="(-*\d+[.\d+]*)"
+                            required />
+                        <div class="mdui-textfield-error i18n" name="err-num-req"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mdui-row-xs-4" style="margin: 8px 0px 8px 0px;">
+                <div class="mdui-col mdui-typo" style="margin-top: 5px;">
+                    <p class="i18n" name='ac-easing'></p>
+                </div>
+                <div class="mdui-col">
+                    <select class="mdui-select" mdui-select id='sel-ac-easing'>
+                        <option value="sisi">sisi</option>
+                        <option value="siso">siso</option>
+                        <option value="sosi">sosi</option>
+                        <option value="soso">soso</option>
+                        <option value="b" selected>b</option>
+                        <option value="s">s</option>
+                        <option value="si">si</option>
+                        <option value="so">so</option>
+                    </select>
+                </div>
+                <div class="mdui-col mdui-typo" style="margin-top: 5px;">
+                    <p class="i18n" name='ac-color'></p>
+                </div>
+                <div class="mdui-col">
+                    <select class="mdui-select" mdui-select id='sel-ac-color'>
+                        <option value="0" selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mdui-row" style="margin: 8px 0px 8px 0px;">
+                <div class="mdui-col">
+                    <label class="mdui-checkbox">
+                        <input type="checkbox" id="ac-skyline" />
+                        <i class="mdui-checkbox-icon"></i>
+                        黑线
+                    </label>
+                </div>
+            </div>
+            <div class="mdui-row" style="margin: 8px 0px 0px 0px;">
+                <div class="mdui-col-xs-12 mdui-col-sm-6 mdui-col-offset-sm-6">
+                    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block i18n"
+                        id="ac-btn-generate" name="gen" onclick="genArc()"></button>
+                </div>
+            </div>
+            <div class="mdui-row" style="margin: 8px 0px 0px 0px;">
+                <div class="mdui-textfield">
+                    <textarea class="mdui-textfield-input i18n-input" name="result" rows="1" placeholder=""
+                        id="text-result" disabled></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdui-dialog" id="time-caculator">
+        <div class="mdui-typo" style="margin: 24px 24px 24px 24px;">
+            <h4 class="mdui-text-color-pink-accent i18n" name="time-caculator"></h4>
+            <div class="mdui-container" style="margin-bottom: 24px;">
+                <div class="mdui-row-xs-1 mdui-row-md-3">
+                    <div class="mdui-col">
+                        <div class="mdui-textfield mdui-textfield-floating-label">
+                            <label class="mdui-textfield-label i18n" name="tc-time-start"></label>
+                            <input class="mdui-textfield-input" id="tc-text-start-time" type="text" pattern="(\d+)"
+                                required />
+                            <div class="mdui-textfield-error i18n" name="err-natint-req"></div>
+                        </div>
+                    </div>
+                    <div class="mdui-col">
+                        <div class="mdui-textfield mdui-textfield-floating-label">
+                            <label class="mdui-textfield-label i18n" name="tc-bpm"></label>
+                            <input class="mdui-textfield-input" id="tc-text-bpm" type="text" pattern="([1-9]\d*)"
+                                required />
+                            <div class="mdui-textfield-error i18n" name="err-posint-req"></div>
+                        </div>
+                    </div>
+                    <div class="mdui-col">
+                        <div class="mdui-textfield mdui-textfield-floating-label">
+                            <label class="mdui-textfield-label i18n" name="tc-count"></label>
+                            <input class="mdui-textfield-input" id="tc-text-count" type="text" pattern="(\d+)"
+                                required />
+                            <div class="mdui-textfield-error i18n" name="err-natint-req"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-row" style="margin: 8px 0px 0px 0px;">
+                    <div class="mdui-col-xs-10 mdui-col-md-11">
+                        <div class="mdui-textfield">
+                            <textarea class="mdui-textfield-input i18n-input" name="result" rows="1" placeholder=""
+                                id="text-result" disabled></textarea>
+                        </div>
+                    </div>
+                    <div class="mdui-col-xs-2 mdui-col-md-1">
+                        <button class="mdui-btn mdui-btn-icon mdui-ripple i18n-tooltip" name="tip-copy-and-close" mdui-tooltip id="tc-copy-and-close" style="margin-top: 20px;">
+                            <i class="mdui-icon material-icons">content_copy</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="mdui-progress" id="page-progress">
         <div class="mdui-progress-indeterminate" visibility="hidden"></div>
     </div>
@@ -81,7 +247,7 @@
     <!-- MDUI JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
         integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous">
-    </script>
+        </script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/static/js/lib/jquery.i18n.properties.min.js"></script>
     <script type="text/javascript" src="/static/js/lib/jquery.pjax.js"></script>

@@ -21,7 +21,7 @@ var windowLoad = function () {
     });
 
     // 注册文本框检查事件
-    let inputlist = document.getElementsByClassName('mdui-textfield-input');
+    let inputlist = document.getElementsByClassName('mdui-textfield-input-card');
     if (inputlist !== null) {
         Array.prototype.slice.call(inputlist).forEach(element => {
             element.addEventListener('input', function () {
