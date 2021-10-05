@@ -57,6 +57,52 @@
                     </div>
                 </div>
                 <div class="mdui-row">
+                    <div class="mdui-col-xs-2 mdui-col-sm-1">
+                        <label class="mdui-switch">
+                            <input type="checkbox" id='more-settings-toggle' />
+                            <i class="mdui-switch-icon"></i>
+                        </label>
+                    </div>
+                    <div class="mdui-col-xs-10 mdui-col-sm-11 i18n" name="more" style="margin-top: 6px;">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="mdui-collapse">
+                    <div class="mdui-collapse-item" id="more-settings-item">
+                        <div class="mdui-collapse-item-body">
+                            <div class="mdui-container-fluid">
+                                <div class="mdui-row">
+                                    <div class="mdui-col-xs-12 mdui-typo">
+                                        <p class="i18n" name="arc-animate-note-bezier" style="margin-top: 8px;"></p>
+                                    </div>
+                                </div>
+                                <div class="mdui-row">
+                                    <div class="mdui-col-xs-6 mdui-col-md-3 mdui-typo" style="margin-top: 52px;">
+                                        <p class="i18n" name='timing-easing'></p>
+                                    </div>
+                                    <div class="mdui-col-xs-6 mdui-col-md-3">
+                                        <select class="mdui-select" id='sel-mode' style="margin-top: 44px;">
+                                            <option value="b">b</option>
+                                            <option value="s" selected>s</option>
+                                            <option value="si">si</option>
+                                            <option value="so">so</option>
+                                        </select>
+                                    </div>
+                                    <div class="mdui-col-xs-12 mdui-col-md-6">
+                                        <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                                            <label class="mdui-textfield-label i18n" name="easing-b"></label>
+                                            <input class="mdui-textfield-input " id="text-easing-b-point" type="text"
+                                                pattern="(-*\d+[.\d+]*),(-*\d+[.\d+]*),(-*\d+[.\d+]*),(-*\d+[.\d+]*)" />
+                                            <div class="mdui-textfield-error i18n" name="err-bezier"></div>
+                                            <div class="mdui-textfield-helper i18n" name="info-sel"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-row">
                     <div class="mdui-textfield">
                         <textarea class="mdui-textfield-input i18n-input" name="result" rows="10" placeholder="" id="text-result" disabled></textarea>
                     </div>
