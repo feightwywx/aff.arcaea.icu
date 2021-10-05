@@ -37,6 +37,10 @@ def create_app():
     @app.route('/arc-crease-line')
     def arc_crease_line():
         return render_template('arc-crease-line.html')
+
+    @app.route('/arc-animate')
+    def arc_animate():
+        return render_template('arc-animate.html')
     
     @app.route('/timing-easing')
     def timing_easing():

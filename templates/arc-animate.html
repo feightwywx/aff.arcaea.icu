@@ -1,0 +1,224 @@
+{% extends pjax('base.html') %}
+
+{% block content %}
+<div class="mdui-card pjax-card" style="margin: 16px 16px 16px 16px; display: none;">
+    <div class="mdui-typo" style="margin: 24px 24px 24px 24px;">
+        <h4 class="mdui-text-color-pink-accent i18n" name="arc-animate-headword"></h4>
+        <p class="i18n" name="arc-animate-note"></p>
+        <div class=" mdui-container">
+            <div class="mdui-row">
+                <div class="mdui-col-xs-12">
+                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                        <label class="mdui-textfield-label i18n" name="arcstring"></label>
+                        <input class="mdui-textfield-input " id="text-arcstring" type="text"
+                            pattern="arc\((\d+),(\d+),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([a-z]{1,4}),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([0-2]),(none|full|incremental),(true|false)\)*;"
+                            required />
+                        <div class="mdui-textfield-error i18n" name="err-wrong-arc-fmt"></div>
+                        <div class="mdui-textfield-helper i18n" name="info-single-arc-with-arctap"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-row-xs-1 mdui-row-md-2">
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                        <label class="mdui-textfield-label i18n" name="time-start"></label>
+                        <input class="mdui-textfield-input " id="text-start" type="text" pattern="(\d*)" required />
+                        <div class="mdui-textfield-error i18n" name="err-int-req"></div>
+                    </div>
+                </div>
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                        <label class="mdui-textfield-label i18n" name="time-stop"></label>
+                        <input class="mdui-textfield-input " id="text-start" type="text" pattern="(\d*)" required />
+                        <div class="mdui-textfield-error i18n" name="err-int-req"></div>
+                    </div>
+                </div>
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                        <label class="mdui-textfield-label i18n" name="x-trans"></label>
+                        <input class="mdui-textfield-input " id="text-delta-x" type="text" pattern="(-*\d+[.\d+]*)"
+                            required />
+                        <div class="mdui-textfield-error i18n" name="err-num-req"></div>
+                        <div class="mdui-textfield-helper i18n" name="info-std-zero"></div>
+                    </div>
+                </div>
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                        <label class="mdui-textfield-label i18n" name="y-trans"></label>
+                        <input class="mdui-textfield-input " id="text-delta-y" type="text" pattern="(-*\d+[.\d+]*)"
+                            required />
+                        <div class="mdui-textfield-error i18n" name="err-num-req"></div>
+                        <div class="mdui-textfield-helper i18n" name="info-std-zero"></div>
+                    </div>
+                </div>
+                <div class="mdui-col">
+                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                        <label class="mdui-textfield-label i18n" name="bpm-base"></label>
+                        <input class="mdui-textfield-input " id="text-basebpm" type="text" pattern="(-*\d+[.\d+]*)"
+                            required />
+                        <div class="mdui-textfield-error i18n" name="err-num-req"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-row" style="margin: 8px 0px 8px 0px;">
+                <div class="mdui-col-xs-6 mdui-col-md-3 mdui-typo" style="margin-top: 5px;">
+                    <p class="i18n" name='x-easing'></p>
+                </div>
+                <div class="mdui-col-xs-6 mdui-col-md-3">
+                    <select class="mdui-select" mdui-select id='sel-x-easing'>
+                        <option value="b">b</option>
+                        <option value="s" selected>s</option>
+                        <option value="si">si</option>
+                        <option value="so">so</option>
+                    </select>
+                </div>
+                <div class="mdui-col-xs-6 mdui-col-md-3 mdui-typo" style="margin-top: 5px;">
+                    <p class="i18n" name='y-easing'></p>
+                </div>
+                <div class="mdui-col-xs-6 mdui-col-md-3">
+                    <select class="mdui-select" mdui-select id='sel-y-easing'>
+                        <option value="b">b</option>
+                        <option value="s" selected>s</option>
+                        <option value="si">si</option>
+                        <option value="so">so</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-col-sm-6"></div>
+                <div class="mdui-col-xs-12 mdui-col-sm-6">
+                    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block i18n"
+                        id="btn-generate" name="gen" onclick="genArcCutter()" disabled></button>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-col-xs-2 mdui-col-sm-1">
+                    <label class="mdui-switch">
+                        <input type="checkbox" id='more-settings-toggle' />
+                        <i class="mdui-switch-icon"></i>
+                    </label>
+                </div>
+                <div class="mdui-col-xs-10 mdui-col-sm-11" style="margin-top: 6px;">
+                    <p class="i18n" name="more"></p>
+                </div>
+            </div>
+            <div class="mdui-collapse">
+                <div class="mdui-collapse-item" id="more-settings-item">
+                    <div class="mdui-collapse-item-body">
+                        <div class="mdui-container-fluid">
+                            <div class="mdui-row-xs-1">
+                                <div class="mdui-col mdui-typo">
+                                    <p class="i18n" name="arc-animate-note-bezier" style="margin-top: 8px;"></p>
+                                </div>
+                            </div>
+                            <div class="mdui-row-xs-1 mdui-row-md-2">
+                                <div class="mdui-col">
+                                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                                        <label class="mdui-textfield-label i18n" name="x-easing-b"></label>
+                                        <input class="mdui-textfield-input " id="text-easing-b-point-x" type="text"
+                                            pattern="(-*\d+[.\d+]*),(-*\d+[.\d+]*),(-*\d+[.\d+]*),(-*\d+[.\d+]*)" />
+                                        <div class="mdui-textfield-error i18n" name="err-bezier"></div>
+                                        <div class="mdui-textfield-helper i18n" name="info-sel"></div>
+                                    </div>
+                                </div>
+                                <div class="mdui-col">
+                                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                                        <label class="mdui-textfield-label i18n" name="y-easing-b"></label>
+                                        <input class="mdui-textfield-input " id="text-easing-b-point-y" type="text"
+                                            pattern="(-*\d+[.\d+]*),(-*\d+[.\d+]*),(-*\d+[.\d+]*),(-*\d+[.\d+]*)" />
+                                        <div class="mdui-textfield-error i18n" name="err-bezier"></div>
+                                        <div class="mdui-textfield-helper i18n" name="info-sel"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdui-divider" style="margin-top: 16px;"></div>
+                            <div class="mdui-row-xs-1">
+                                <div class="mdui-col mdui-typo">
+                                    <p class="i18n" name="arc-animate-note-delta-t" style="margin-top: 8px;"></p>
+                                </div>
+                            </div>
+                            <div class="mdui-row">
+                                <div class="mdui-col-xs-12 mdui-col-md-6">
+                                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                                        <label class="mdui-textfield-label i18n" name="offset-t"></label>
+                                        <input class="mdui-textfield-input " id="text-offset-t" type="text" pattern="(\d+)"/>
+                                        <div class="mdui-textfield-error i18n" name="err-int-req"></div>
+                                        <div class="mdui-textfield-helper i18n" name="info-sel"></div>
+                                    </div>
+                                </div>
+                                <div class="mdui-col-xs-12 mdui-col-md-6">
+                                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                                        <label class="mdui-textfield-label i18n" name="delta-offset-t"></label>
+                                        <input class="mdui-textfield-input " id="text-delta-offset-t" type="text" pattern="(\d+)"/>
+                                        <div class="mdui-textfield-error i18n" name="err-int-req"></div>
+                                        <div class="mdui-textfield-helper i18n" name="info-sel"></div>
+                                    </div>
+                                </div>
+                                <div class="mdui-col-xs-6 mdui-typo" style="margin-top: 32px;">
+                                    <p class="i18n" name='delta-offset-t-easing'></p>
+                                </div>
+                                <div class="mdui-col-xs-6">
+                                    <select class="mdui-select" mdui-select id='sel-y-easing' style="margin-top: 24px;">
+                                        <option value="b">b</option>
+                                        <option value="s" selected>s</option>
+                                        <option value="si">si</option>
+                                        <option value="so">so</option>
+                                    </select>
+                                </div>
+                                <div class="mdui-col-xs-12 mdui-col-md-6">
+                                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                                        <label class="mdui-textfield-label i18n" name="easing-b-point-offset-t"></label>
+                                        <input class="mdui-textfield-input " id="text-easing-b-point-offset-t" type="text"
+                                            pattern="(-*\d+[.\d+]*),(-*\d+[.\d+]*),(-*\d+[.\d+]*),(-*\d+[.\d+]*)" />
+                                        <div class="mdui-textfield-error i18n" name="err-bezier"></div>
+                                        <div class="mdui-textfield-helper i18n" name="info-sel"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdui-divider" style="margin-top: 16px;"></div>
+                            <div class="mdui-row-xs-1">
+                                <div class="mdui-col mdui-typo">
+                                    <p class="i18n" name="arc-animate-note-custom" style="margin-top: 8px;"></p>
+                                </div>
+                            </div>
+                            <div class="mdui-row-xs-1 mdui-row-md-2">
+                                <div class="mdui-col">
+                                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                                        <label class="mdui-textfield-label i18n" name="bpm-inf"></label>
+                                        <input class="mdui-textfield-input " id="text-infbpm" type="text" pattern="(-*\d+[.\d+]*)"/>
+                                        <div class="mdui-textfield-error i18n" name="err-num-req"></div>
+                                        <div class="mdui-textfield-helper i18n" name="info-sel-infbpm"></div>
+                                    </div>
+                                </div>
+                                <div class="mdui-col">
+                                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                                        <label class="mdui-textfield-label i18n" name="framerate"></label>
+                                        <input class="mdui-textfield-input " id="text-framerate" type="text" pattern="(\d+[.\d+]*)"/>
+                                        <div class="mdui-textfield-error i18n" name="err-posnum-req"></div>
+                                        <div class="mdui-textfield-helper i18n" name="info-sel-framerate"></div>
+                                    </div>
+                                </div>
+                                <div class="mdui-col">
+                                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                                        <label class="mdui-textfield-label i18n" name="fake-note-t"></label>
+                                        <input class="mdui-textfield-input " id="text-fake-note-t" type="text" pattern="(\d+)"/>
+                                        <div class="mdui-textfield-error i18n" name="err-natint-req"></div>
+                                        <div class="mdui-textfield-helper i18n" name="info-sel-fake-note-t"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-textfield">
+                    <textarea class="mdui-textfield-input i18n-input" name="result" rows="10" placeholder=""
+                        id="text-result" disabled></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

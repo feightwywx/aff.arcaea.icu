@@ -6,6 +6,7 @@ var kitUIArray = [
     'arc-cutter',
     'arc-rain',
     'arc-crease-line',
+    'arc-animate',
     'timing-easing',
     'timing-glitch'
 ];
@@ -169,4 +170,5 @@ var execI18n = function () {
         },
         async: true
     });
+
 };
