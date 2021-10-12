@@ -44,6 +44,66 @@ var genArcRain = function () {
     getResult(ajaxdata);
 }
 
+var genArcAnimate = function () { 
+    document.getElementById('btn-generate').disabled = 'disabled';
+
+    let ajaxdata = {
+        arc: document.getElementById('text-arcstring').value,
+        start: document.getElementById('text-start').value,
+        stop: document.getElementById('text-stop').value,
+        delta_x: document.getElementById('text-delta-x').value,
+        delta_y: document.getElementById('text-delta-y').value,
+        basebpm: document.getElementById('text-basebpm').value,
+        easing_x: document.getElementById('sel-x-easing').value,
+        easing_y: document.getElementById('sel-y-easing').value,
+        easing_offset_t: document.getElementById('sel-t-easing').value
+    }
+
+    let easing_b_point_x = document.getElementById('text-easing-b-point-x').value;
+    if (easing_b_point_x !== '') {
+        ajaxdata.easing_b_point_x = easing_b_point_x;
+    }
+
+    let easing_b_point_y = document.getElementById('text-easing-b-point-y').value;
+    if (easing_b_point_y !== '') {
+        ajaxdata.easing_b_point_y = easing_b_point_y;
+    }
+
+    let offset_t = document.getElementById('text-offset-t').value;
+    if (offset_t !== '') {
+        ajaxdata.offset_t = offset_t;
+    }
+
+    let delta_offset_t = document.getElementById('text-delta-offset-t').value;
+    if (delta_offset_t !== '') {
+        ajaxdata.delta_offset_t = delta_offset_t;
+    }
+
+    let easing_b_point_offset_t = document.getElementById('text-easing-b-point-offset-t').value;
+    if (easing_b_point_offset_t !== '') {
+        ajaxdata.easing_b_point_offset_t = easing_b_point_offset_t;
+    }
+
+    let infbpm = document.getElementById('text-infbpm').value;
+    if (infbpm !== '') {
+        ajaxdata.infbpm = infbpm;
+    }
+
+    let framerate = document.getElementById('text-framerate').value;
+    if (framerate !== '') {
+        ajaxdata.framerate = framerate;
+    }
+
+    let fake_note_t = document.getElementById('text-fake-note-t').value;
+    if (fake_note_t !== '') {
+        ajaxdata.fake_note_t = fake_note_t;
+    }
+
+    console.log(ajaxdata);
+    getResult(ajaxdata);
+
+ }
+
 var genArcCrease = function () {
     document.getElementById('btn-generate').disabled = 'disabled';
 
@@ -62,6 +122,29 @@ var genArcCrease = function () {
     getResult(ajaxdata, 5000, 'GET', 'arc/crease-line');
 }
 
+var genArc = function () { 
+    document.getElementById('btn-generate').disabled = 'disabled';
+    let skyline_checked = document.getElementById('ac-skyline').checked;
+    let ajaxdata = {
+        start: document.getElementById('ac-text-start-time').value,
+        stop: document.getElementById('ac-text-stop-time').value,
+        start_x: document.getElementById('ac-text-start-x').value,
+        stop_x: document.getElementById('ac-text-stop-x').value,
+        start_y: document.getElementById('ac-text-start-x').value,
+        stop_y: document.getElementById('ac-text-stop-y').value,
+        easing: document.getElementById('sel-ac-easing').value,
+        color: document.getElementById('sel-ac-color').value,
+        skyline: skyline_checked
+    }
+
+    let arctap = document.getElementById('text-ac-arctap').value;
+    if (skyline_checked && arctap !== '') {
+        ajaxdata.arctap = arctap;
+    }
+
+    getResult(ajaxdata, 5000, 'GET', 'arc/construct', 'ac-text-result');
+ }
+
 var genTimingEasing = function () {
     document.getElementById('btn-generate').disabled = 'disabled';
 
@@ -71,10 +154,15 @@ var genTimingEasing = function () {
         start_bpm: document.getElementById('text-start-bpm').value,
         stop_bpm: document.getElementById('text-stop-bpm').value,
         count: document.getElementById('text-count').value,
+        easing: document.getElementById('sel-mode').value
     };
     let bar = document.getElementById('text-bar').value;
+    let easing_b_point = document.getElementById('text-easing-b-point').value;
     if (bar !== '') {
         ajaxdata.bar = bar;
+    }
+    if (easing_b_point !== '') {
+        ajaxdata.easing_b_point = easing_b_point
     }
 
     getResult(ajaxdata);

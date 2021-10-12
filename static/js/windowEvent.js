@@ -40,6 +40,17 @@ var windowLoad = function () {
         });
     }
 
+    // 注册黑线开关事件
+    let skyline_checkbox = document.getElementById('ac-skyline');
+    let arctap_textbox = document.getElementById('text-ac-arctap');
+    skyline_checkbox.addEventListener('change', function () {
+        if (document.getElementById('ac-skyline').checked) {
+            arctap_textbox.removeAttribute('disabled');
+        } else {
+            arctap_textbox.disabled = 'disabled';
+        }
+    });
+
     mdui.mutation();
 
     pjaxCard = $('.pjax-card')[0];

@@ -1,6 +1,6 @@
 const apiBaseUrl = 'https://api.arcaea.icu/aff/';
 
-var getResult = function (ajaxData, timeout = 5000, method = 'GET', customUrl = null) {
+var getResult = function (ajaxData, timeout = 5000, method = 'GET', customUrl = null, resultDOM = 'text-result') {
 
     spinnerContainer = document.getElementById('div-spinner');
     if (spinnerContainer !== null) {
@@ -27,7 +27,7 @@ var getResult = function (ajaxData, timeout = 5000, method = 'GET', customUrl = 
         datatype: 'json',
         success: function (data) {
             let jsondata = JSON.parse(data)
-            let textResult = document.getElementById('text-result');
+            let textResult = document.getElementById(resultDOM);
             if (jsondata.status === 'success') {
                 textResult.value = jsondata.result;
                 textResult.removeAttribute('disabled');

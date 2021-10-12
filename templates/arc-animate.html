@@ -29,7 +29,7 @@
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
                         <label class="mdui-textfield-label i18n" name="time-stop"></label>
-                        <input class="mdui-textfield-input " id="text-start" type="text" pattern="(\d*)" required />
+                        <input class="mdui-textfield-input " id="text-stop" type="text" pattern="(\d*)" required />
                         <div class="mdui-textfield-error i18n" name="err-int-req"></div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                 <div class="mdui-col-sm-6"></div>
                 <div class="mdui-col-xs-12 mdui-col-sm-6">
                     <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block i18n"
-                        id="btn-generate" name="gen" onclick="genArcCutter()" disabled></button>
+                        id="btn-generate" name="gen" onclick="genArcAnimate()" disabled></button>
                 </div>
             </div>
             <div class="mdui-row">
@@ -158,7 +158,7 @@
                                     <p class="i18n" name='delta-offset-t-easing'></p>
                                 </div>
                                 <div class="mdui-col-xs-6">
-                                    <select class="mdui-select" mdui-select id='sel-y-easing' style="margin-top: 24px;">
+                                    <select class="mdui-select" mdui-select id='sel-t-easing' style="margin-top: 24px;">
                                         <option value="b">b</option>
                                         <option value="s" selected>s</option>
                                         <option value="si">si</option>
