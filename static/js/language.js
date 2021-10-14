@@ -3,6 +3,7 @@ var $ = jQuery;
 var kitUIArray = [
     'chart-offset',
     'arc-split',
+    'arc-splitbytiming',
     'arc-cutter',
     'arc-rain',
     'arc-crease-line',

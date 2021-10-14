@@ -174,23 +174,23 @@
                             <label class="mdui-textfield-label i18n" name="tc-time-start"></label>
                             <input class="mdui-textfield-input" id="tc-text-start-time" type="text" pattern="(\d+)"
                                 required />
-                            <div class="mdui-textfield-error i18n" name="err-natint-req"></div>
+                            <div class="mdui-textfield-error i18n" name="err-int-req"></div>
                         </div>
                     </div>
                     <div class="mdui-col">
                         <div class="mdui-textfield mdui-textfield-floating-label">
                             <label class="mdui-textfield-label i18n" name="tc-bpm"></label>
-                            <input class="mdui-textfield-input" id="tc-text-bpm" type="text" pattern="([1-9]\d*)"
+                            <input class="mdui-textfield-input" id="tc-text-bpm" type="text" pattern="(\d+[.\d+]*)"
                                 required />
-                            <div class="mdui-textfield-error i18n" name="err-posint-req"></div>
+                            <div class="mdui-textfield-error i18n" name="err-posnum-req"></div>
                         </div>
                     </div>
                     <div class="mdui-col">
                         <div class="mdui-textfield mdui-textfield-floating-label">
                             <label class="mdui-textfield-label i18n" name="tc-count"></label>
-                            <input class="mdui-textfield-input" id="tc-text-count" type="text" pattern="(\d+)"
+                            <input class="mdui-textfield-input" id="tc-text-count" type="text" pattern="([1-9]\d*)"
                                 required />
-                            <div class="mdui-textfield-error i18n" name="err-natint-req"></div>
+                            <div class="mdui-textfield-error i18n" name="err-posint-req"></div>
                         </div>
                     </div>
                 </div>
@@ -202,7 +202,7 @@
                         </div>
                     </div>
                     <div class="mdui-col-xs-2 mdui-col-md-1">
-                        <button class="mdui-btn mdui-btn-icon mdui-ripple i18n-tooltip" name="tip-copy-and-close" mdui-tooltip id="tc-copy-and-close" style="margin-top: 20px;">
+                        <button class="mdui-btn mdui-btn-icon mdui-ripple i18n-tooltip" name="tip-copy-and-close" mdui-tooltip id="tc-copy-and-close" style="margin-top: 20px;" onclick="timeCalCopyClose()" mdui-dialog-close>
                             <i class="mdui-icon material-icons">content_copy</i>
                         </button>
                     </div>
@@ -223,6 +223,7 @@
             <a class="mdui-list-item i18n" name="drawer-chart-offset" href="/chart-offset"></a>
             <li class="mdui-subheader i18n" name="drawer-sub-arc"></li>
             <a class="mdui-list-item i18n" name="drawer-arc-cutter" href="/arc-cutter"></a>
+            <a class="mdui-list-item i18n" name="drawer-arc-splitbytiming" href="/arc-splitbytiming"></a>
             <a class="mdui-list-item i18n" name="drawer-arc-rain" href="/arc-rain"></a>
             <a class="mdui-list-item i18n" name="drawer-arc-crease" href="/arc-crease-line"></a>
             <a class="mdui-list-item i18n" name="drawer-arc-animate" href="/arc-animate"></a>

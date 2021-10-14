@@ -9,6 +9,26 @@ var genChartOffset = function () {
     getResult(ajaxdata, 1000000, 'POST');
 }
 
+var genTimeResult = function () {
+    time = Number(document.getElementById('tc-text-start-time').value);
+    bpm = Number(document.getElementById('tc-text-bpm').value);
+    count = Number(document.getElementById('tc-text-count').value);
+    // console.log('hit: ' + String(time) + ' ' + String(bpm) + ' ' + String(count))
+
+    let result = 0;
+    result = 60000 / bpm / count + time; 
+    resultTextfield = document.getElementById('tc-text-result');
+    resultTextfield.value = result;
+}
+
+var timeCalCopyClose = function () {
+    let textResult = document.getElementById('tc-text-result');
+    textResult.removeAttribute('disabled');
+    textResult.select();
+    document.execCommand("copy");
+    textResult.disabled = true;
+}
+
 var genArcCutter = function () {
     document.getElementById('btn-generate').disabled = 'disabled';
 
@@ -28,6 +48,17 @@ var genArcCutter = function () {
     getResult(ajaxdata, 5000, 'GET', 'arc/split');
 }
 
+var genArcSplitByTiming = function () {
+    document.getElementById('btn-generate').disabled = 'disabled';
+
+    let ajaxdata = {
+        arc: document.getElementById('text-arc').value,
+        timings: document.getElementById('text-timings').value
+    };
+
+    getResult(ajaxdata);
+}
+
 var genArcRain = function () {
     document.getElementById('btn-generate').disabled = 'disabled';
 
@@ -44,7 +75,7 @@ var genArcRain = function () {
     getResult(ajaxdata);
 }
 
-var genArcAnimate = function () { 
+var genArcAnimate = function () {
     document.getElementById('btn-generate').disabled = 'disabled';
 
     let ajaxdata = {
@@ -102,7 +133,7 @@ var genArcAnimate = function () {
     console.log(ajaxdata);
     getResult(ajaxdata);
 
- }
+}
 
 var genArcCrease = function () {
     document.getElementById('btn-generate').disabled = 'disabled';
@@ -122,7 +153,7 @@ var genArcCrease = function () {
     getResult(ajaxdata, 5000, 'GET', 'arc/crease-line');
 }
 
-var genArc = function () { 
+var genArc = function () {
     document.getElementById('btn-generate').disabled = 'disabled';
     let skyline_checked = document.getElementById('ac-skyline').checked;
     let ajaxdata = {
@@ -143,7 +174,7 @@ var genArc = function () {
     }
 
     getResult(ajaxdata, 5000, 'GET', 'arc/construct', 'ac-text-result');
- }
+}
 
 var genTimingEasing = function () {
     document.getElementById('btn-generate').disabled = 'disabled';

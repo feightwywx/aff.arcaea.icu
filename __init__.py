@@ -41,6 +41,10 @@ def create_app():
     @app.route('/arc-animate')
     def arc_animate():
         return render_template('arc-animate.html')
+
+    @app.route('/arc-splitbytiming')
+    def arc_split_by_timing():
+        return render_template('arc-splitbytiming.html')
     
     @app.route('/timing-easing')
     def timing_easing():

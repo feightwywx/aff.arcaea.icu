@@ -51,6 +51,13 @@ var windowLoad = function () {
         }
     });
 
+    // 注册时间计算器事件
+    document.getElementById('tc-text-start-time').addEventListener('input', function () {
+        genTimeResult();
+    });
+    document.getElementById('tc-text-bpm').addEventListener('input', genTimeResult);
+    document.getElementById('tc-text-count').addEventListener('input', genTimeResult);
+
     mdui.mutation();
 
     pjaxCard = $('.pjax-card')[0];
