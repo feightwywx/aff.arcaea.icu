@@ -67,4 +67,11 @@ var windowLoad = function () {
     mdui.$('#page-progress').hide();
 }
 
-$(windowLoad());
+$(function () {
+    console.log("--- Cat Nyanbox Loading ---")
+    console.log("_._     _,-'\"\"`-._");
+    console.log("(,-.`._,'(       |\`-/|");
+    console.log("    `-.-' \ )-`( , o o)");
+    console.log("-bf-      `-    \`_`\"'-");
+    windowLoad();
+});

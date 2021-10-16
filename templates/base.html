@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
         integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" />
     <link rel="stylesheet" href="/static/css/card.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNZN20X39X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-SNZN20X39X');
+    </script>
     <title class="i18n" name="title"></title>
 </head>
 
@@ -142,8 +151,7 @@
                 <div class="mdui-col">
                     <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
                         <label class="mdui-textfield-label i18n" name="ac-arctap"></label>
-                        <input class="mdui-textfield-input " id="text-ac-arctap" type="text"
-                            pattern="((\d+)*,?)+" />
+                        <input class="mdui-textfield-input " id="text-ac-arctap" type="text" pattern="((\d+)*,?)+" />
                         <div class="mdui-textfield-error i18n" name="err-arctap"></div>
                         <div class="mdui-textfield-helper i18n" name="info-sel-arctap"></div>
                     </div>
@@ -201,7 +209,9 @@
                         </div>
                     </div>
                     <div class="mdui-col-xs-2 mdui-col-md-1">
-                        <button class="mdui-btn mdui-btn-icon mdui-ripple i18n-tooltip" name="tip-copy-and-close" mdui-tooltip id="tc-copy-and-close" style="margin-top: 20px;" onclick="timeCalCopyClose()" mdui-dialog-close>
+                        <button class="mdui-btn mdui-btn-icon mdui-ripple i18n-tooltip" name="tip-copy-and-close"
+                            mdui-tooltip id="tc-copy-and-close" style="margin-top: 20px;" onclick="timeCalCopyClose()"
+                            mdui-dialog-close>
                             <i class="mdui-icon material-icons">content_copy</i>
                         </button>
                     </div>

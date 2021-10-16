@@ -1,0 +1,42 @@
+{% extends pjax('base.html') %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/index.css" />
+
+<div class="mdui-card pjax-card" style="margin: 16px 16px 16px 16px; display: none;">
+    <div class="mdui-typo" style="margin: 24px 24px 24px 24px;">
+        <h4 class="mdui-text-color-pink-accent">更新日志</h4>
+        <h5 class="mdui-text-color-pink-accent">2.0 (2021.10)</h5>
+        <h6>新特性</h6>
+        <ul>
+            <li>时间点切蛇器：给定Arc和Timing列表，根据Timing列表对Arc进行切分（支持天键）</li>
+            <li>帧动画辅助：利用timinggroup和noinput实现Arc物件三轴平移的视觉效果，多样化的自定义参数实现从缓动函数到极大BPM值的全方位控制</li>
+            <li>Timing缓动：现在支持si/so/b缓动函数，更支持自定义三阶贝塞尔曲线</li>
+        </ul>
+        <p>现在还提供了两个小工具，在任意页面点击右上角的三点菜单即可访问：</p>
+        <ul>
+            <li>Arc构造工具：觉得arc()语句的参数过多，难以记忆和书写吗？通过GUI构造Arc也许会解决这个问题！</li>
+            <li>时间细分计算器：快捷地得知一首曲子某个分音的精确长度</li>
+        </ul>
+        <p>此外，也许您已经注意到了，AFF工具箱现在已经引入PJAX全站无刷新技术辅以恰当的过渡动画，有没有觉得更丝滑了那么一点呢（</p>
+        <p>从这个版本开始，AFF工具箱开始接入Google Analysis，以便得知站点访问量等基本信息。</p>
+        <s>也就是说，我完全不知道AFF工具箱截至目前有多少人使用过，不过从我得到的反馈来看，估计还是有那么一些的！感谢你们！（</s>
+
+        <h5 class="mdui-text-color-pink-accent">1.2 (2021.9)</h5>
+        <h6>优化</h6>
+        <ul>
+            <li>下雨黑线工具支持输入浮点雨点长度和间隔</li>
+        </ul>
+
+        <h5 class="mdui-text-color-pink-accent">1.1 (2021.8)</h5>
+        <h6>新特性</h6>
+        <ul>
+        <li>添加了i18n支持。感谢<a href="https://github.com/reokawamura">reo.</a>提供的英文翻译。</li>
+    </ul>
+        <p>从这个版本开始，AFF工具箱使用Cookie来记录您的语言信息。</p>
+
+        <h5 class="mdui-text-color-pink-accent">1.0 (2021.7)</h5>
+        <s>梦开始的地方</s>
+    </div>
+</div>
+{% endblock %}

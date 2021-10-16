@@ -54,6 +54,10 @@ def create_app():
     def timing_glitch():
         return render_template('timing-glitch.html')
 
+    @app.route('/changelog')
+    def changelog():
+        return render_template('changelog.html')
+
     pjax = PJAX()
     pjax.init_app(app)
 
