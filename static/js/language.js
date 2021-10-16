@@ -137,8 +137,8 @@ var execI18n = function () {
             // console.log(".i18n 写入中...");
             i18nInsertEle.each(function () {
                 // 根据i18n元素的 name 获取内容写入
-                // console.log(this);
-                // console.log(jQuery.i18n.prop($(this).attr('name')));
+                console.log(this);
+                console.log(jQuery.i18n.prop($(this).attr('name')));
                 $(this).html(jQuery.i18n.prop($(this).attr('name')));
             });
             // console.log("写入完毕");
