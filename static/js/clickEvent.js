@@ -154,7 +154,7 @@ var genArcCrease = function () {
 }
 
 var genArc = function () {
-    document.getElementById('btn-generate').disabled = 'disabled';
+    document.getElementById('ac-btn-generate').disabled = 'disabled';
     let skyline_checked = document.getElementById('ac-skyline').checked;
     let ajaxdata = {
         start: document.getElementById('ac-text-start-time').value,
@@ -173,7 +173,7 @@ var genArc = function () {
         ajaxdata.arctap = arctap;
     }
 
-    getResult(ajaxdata, 5000, 'GET', 'arc/construct', 'ac-text-result');
+    getResult(ajaxdata, 5000, 'GET', 'arc/construct', 'ac-text-result', 'ac-btn-generate');
 }
 
 var genTimingEasing = function () {

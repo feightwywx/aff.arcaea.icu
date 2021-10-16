@@ -9,7 +9,7 @@
                 <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
                     <label class="mdui-textfield-label i18n" name="arcstring"></label>
                     <input class="mdui-textfield-input " id="text-arc" type="text"
-                        pattern="arc\((\d+),(\d+),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([a-z]{1,4}),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([0-2]),(none|full|incremental),(true|false)\)*;"
+                        pattern="arc\((\d+),(\d+),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([a-z]{1,4}),(-*\d+[.\d+]*),(-*\d+[.\d+]*),([0-2]),(none|full|incremental),(true|false)\)(\[(arctap\(\d+\),?)+\])*;"
                         required />
                     <div class="mdui-textfield-error i18n" name="err-wrong-arc-fmt-with-arctap"></div>
                     <div class="mdui-textfield-helper i18n" name="info-single-arc-with-arctap"></div>

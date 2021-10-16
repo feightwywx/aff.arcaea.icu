@@ -1,6 +1,6 @@
 const apiBaseUrl = 'https://api.arcaea.icu/aff/';
 
-var getResult = function (ajaxData, timeout = 5000, method = 'GET', customUrl = null, resultDOM = 'text-result') {
+var getResult = function (ajaxData, timeout = 5000, method = 'GET', customUrl = null, resultDOM = 'text-result', btnDOM = 'btn-generate') {
 
     spinnerContainer = document.getElementById('div-spinner');
     if (spinnerContainer !== null) {
@@ -50,7 +50,7 @@ var getResult = function (ajaxData, timeout = 5000, method = 'GET', customUrl = 
             if (spinnerContainer !== null) {
                 spinnerContainer.innerHTML = "";
             }
-            document.getElementById('btn-generate').removeAttribute('disabled');
+            document.getElementById(btnDOM).removeAttribute('disabled');
         }
     });
 }
