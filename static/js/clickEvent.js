@@ -9,6 +9,29 @@ var genChartOffset = function () {
     getResult(ajaxdata, 1000000, 'POST');
 }
 
+var genChartMirror = function () {
+    document.getElementById('btn-generate').disabled = 'disabled';
+
+    let ajaxdata = {
+        aff: document.getElementById('text-aff').value,
+    };
+
+    getResult(ajaxdata, 1000000, 'POST');
+}
+
+var genChartAlign = function () {
+    document.getElementById('btn-generate').disabled = 'disabled';
+
+    let ajaxdata = {
+        aff: document.getElementById('text-aff').value,
+        bpm: document.getElementById('text-bpm').value,
+        error: document.getElementById('text-error').value,
+        lcd: document.getElementById('text-lcm').value,
+    };
+
+    getResult(ajaxdata, 1000000, 'POST');
+}
+
 var genTimeResult = function () {
     time = Number(document.getElementById('tc-text-start-time').value);
     bpm = Number(document.getElementById('tc-text-bpm').value);

@@ -1,0 +1,59 @@
+{% extends pjax('base.html') %}
+
+{% block content %}
+<div class="mdui-card pjax-card" style="margin: 16px 16px 16px 16px; display: none;">
+    <div class="mdui-typo" style="margin: 24px 24px 24px 24px;">
+        <h4 class="mdui-text-color-pink-accent i18n" name="chart-align-headword"></h4>
+        <p class="i18n" name="chart-align-note"></p>
+        <div class=" mdui-container">
+            <div class="mdui-row">
+                <div class="mdui-textfield mdui-textfield-input-card">
+                    <textarea class="mdui-textfield-input i18n-input" name="affstring" rows="10" placeholder="" id="text-aff" maxlength="1500000" required></textarea>
+                    <div class="mdui-textfield-error i18n" name="err-none-chart"></div>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-col-xs-6">
+                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                        <label class="mdui-textfield-label i18n" name="align-bpm"></label>
+                        <input class="mdui-textfield-input " id="text-bpm" type="text" pattern="(-*\d+)" required/>
+                        <div class="mdui-textfield-helper i18n" name="info-variable-bpm"></div>
+                        <div class="mdui-textfield-error i18n" name="err-int-req"></div>
+                    </div>
+                </div>
+                <div class="mdui-col-xs-6">
+                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                        <label class="mdui-textfield-label i18n" name="align-error"></label>
+                        <input class="mdui-textfield-input " id="text-error" type="text" pattern="(-*\d+)" required/>
+                        <div class="mdui-textfield-error i18n" name="err-int-req"></div>
+                    </div>
+                </div>
+                <div class="mdui-col-xs-6">
+                    <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-input-card">
+                        <label class="mdui-textfield-label i18n" name="align-lcm"></label>
+                        <input class="mdui-textfield-input " id="text-lcm" type="text" pattern="(-*\d+)" required/>
+                        <div class="mdui-textfield-error i18n" name="err-int-req"></div>
+                    </div>
+                </div>
+                <div class="mdui-col-xs-1 mdui-col-offset-xs-5">
+                    <div id="div-spinner" style="margin-top: 50px;">
+                        <!-- Placeholder for spinner -->
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-col-xs-12 mdui-col-sm-6 mdui-col-offset-sm-6">
+                    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block i18n"
+                        id="btn-generate" name="gen" onclick="genChartAlign()" disabled></button>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-textfield">
+                    <textarea class="mdui-textfield-input i18n-input" name="result" rows="10" placeholder="" id="text-result" disabled></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

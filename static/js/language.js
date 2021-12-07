@@ -2,6 +2,8 @@ var $ = jQuery;
 
 var kitUIArray = [
     'chart-offset',
+    'chart-mirror',
+    'chart-align',
     'arc-split',
     'arc-splitbytiming',
     'arc-cutter',
