@@ -9,6 +9,7 @@ from flask import Flask, render_template
 from flask_pjax import PJAX
 from dotenv import load_dotenv
 import os
+import re
 
 load_dotenv()
 
@@ -25,6 +26,14 @@ def create_app():
     @app.route('/chart-offset')
     def chart_offset():
         return render_template('chart-offset.html')
+
+    @app.route('/chart-mirror')
+    def chart_mirror():
+        return render_template('chart-mirror.html')
+
+    @app.route('/chart-align')
+    def chart_align():
+        return render_template('chart-align.html')
 
     @app.route('/arc-cutter')
     def arc_cutter():
@@ -57,6 +66,16 @@ def create_app():
     @app.route('/changelog')
     def changelog():
         return render_template('changelog.html')
+
+    @app.route('/lang/<l>/<n>')
+    def lang(l, n):
+        matchObj = re.match(r'(.*?)_(.*).properties',n)
+        if matchObj:
+            n = matchObj.group(1) + ".properties"
+            print(n)
+        with open(f"lang/{l}/{n}", encoding="utf-8") as f:
+            s = f.read()
+        return s
 
     pjax = PJAX()
     pjax.init_app(app)

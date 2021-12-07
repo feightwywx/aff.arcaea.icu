@@ -1,0 +1,31 @@
+{% extends pjax('base.html') %}
+
+{% block content %}
+<div class="mdui-card pjax-card" style="margin: 16px 16px 16px 16px; display: none;">
+    <div class="mdui-typo" style="margin: 24px 24px 24px 24px;">
+        <h4 class="mdui-text-color-pink-accent i18n" name="chart-mirror-headword"></h4>
+        <p class="i18n" name="chart-mirror-note"></p>
+        <div class=" mdui-container">
+            <div class="mdui-row">
+                <div class="mdui-textfield mdui-textfield-input-card">
+                    <textarea class="mdui-textfield-input  i18n-input" name="affstring" rows="10" placeholder="" id="text-aff" maxlength="1500000" required></textarea>
+                    <div class="mdui-textfield-error i18n" name="err-none-chart"></div>
+                </div>
+            </div>
+            
+            <div class="mdui-row">
+                <div class="mdui-col-xs-12 mdui-col-sm-6 mdui-col-offset-sm-6">
+                    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block i18n"
+                        id="btn-generate" name="gen" onclick="genChartMirror()" disabled></button>
+                </div>
+            </div>
+            <div class="mdui-row">
+                <div class="mdui-textfield">
+                    <textarea class="mdui-textfield-input i18n-input" name="result" rows="10" placeholder="" id="text-result" disabled></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
