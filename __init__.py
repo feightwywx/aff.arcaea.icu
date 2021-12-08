@@ -73,7 +73,7 @@ def create_app():
         if matchObj:
             n = matchObj.group(1) + ".properties"
             print(n)
-        with open(f"lang/{l}/{n}", encoding="utf-8") as f:
+        with open(f"src/lang/{l}/{n}", encoding="utf-8") as f:
             s = f.read()
         return s
 
